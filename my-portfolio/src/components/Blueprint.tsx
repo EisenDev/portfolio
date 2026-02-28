@@ -28,7 +28,7 @@ export default function Blueprint() {
                             viewport={{ once: true }}
                             className="bg-[var(--color-bg-secondary)] border border-[var(--color-border-subtle)] p-8 rounded-2xl shadow-xl hover:border-blue-500/50 transition-colors"
                         >
-                            <h4 className="text-2xl font-bold text-white mb-4">TypeScript End-to-End</h4>
+                            <h4 className="text-2xl font-bold text-[var(--color-text-primary)] mb-4">TypeScript End-to-End</h4>
                             <p className="text-[var(--color-text-secondary)] leading-relaxed mb-4">
                                 From the Drizzle ORM schemas in the backend, through the tRPC/API layer, all the way to the Next.js frontend state. If a database property changes, the UI throws a compiler error.
                                 <strong className="text-blue-400 block mt-2">Zero runtime surprises.</strong>
@@ -40,7 +40,7 @@ export default function Blueprint() {
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: 0.2 }}
-                            className="bg-black border border-[var(--color-brand-600)] p-8 rounded-2xl shadow-[0_0_40px_rgba(16,185,129,0.1)] relative overflow-hidden"
+                            className="bg-[var(--color-bg-secondary)] border border-[var(--color-brand-600)] p-8 rounded-2xl shadow-[0_0_40px_rgba(16,185,129,0.1)] relative overflow-hidden"
                         >
                             <div className="absolute -right-10 -top-10 w-32 h-32 bg-[var(--color-brand-500)]/20 blur-[50px] rounded-full" />
                             <h4 className="text-2xl font-bold text-[var(--color-text-primary)] mb-4 flex items-center gap-3">

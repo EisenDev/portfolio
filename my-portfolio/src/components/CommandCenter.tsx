@@ -110,10 +110,9 @@ export default function CommandCenter() {
                             className="object-cover"
                             priority
                         />
-                        {/* Overlay Gradient */}
-                        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-bg-primary)] via-transparent to-transparent opacity-80" />
                         <div className="absolute bottom-4 left-4 right-4">
-                            <span className="px-3 py-1 bg-black/60 backdrop-blur-md rounded border border-[var(--color-border-subtle)] text-xs text-[var(--color-text-primary)] font-mono tracking-widest uppercase items-center justify-center flex text-center">
+                            <span className="px-3 py-1 bg-[var(--color-bg-secondary)]/60 backdrop-blur-md rounded border border-[var(--color-border-subtle)] text-xs text-[var(--color-text-primary)] font-mono tracking-widest uppercase items-center justify-center flex text-center">
                                 Arjay Escabas • Architect
                             </span>
                         </div>

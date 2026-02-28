@@ -46,7 +46,7 @@ export default function TechStack() {
                                 <div className="w-12 h-12 rounded-xl bg-[var(--color-bg-secondary)] border border-[var(--color-border-subtle)] flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-[var(--color-brand-500)]/10 group-hover:border-[var(--color-brand-500)]/30 transition-all">
                                     <Icon className="w-6 h-6 text-[var(--color-brand-500)]" />
                                 </div>
-                                <h4 className="text-xl font-mono font-bold text-white mb-4">{skillGroup.category}</h4>
+                                <h4 className="text-xl font-mono font-bold text-[var(--color-text-primary)] mb-4">{skillGroup.category}</h4>
                                 <ul className="space-y-3">
                                     {skillGroup.items.map(item => (
                                         <li key={item} className="flex items-center gap-3 text-[var(--color-text-secondary)] font-medium">

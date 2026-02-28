@@ -50,7 +50,7 @@ export default function Playground() {
                 </div>
 
                 {/* THE FLAGSHIP: LUMECORE */}
-                <h4 className="text-xl font-bold text-white mb-8 border-l-4 border-[var(--color-brand-500)] pl-4">The Flagship Project</h4>
+                <h4 className="text-xl font-bold text-[var(--color-text-primary)] mb-8 border-l-4 border-[var(--color-brand-500)] pl-4">The Flagship Project</h4>
 
                 <motion.div
                     initial={{ opacity: 0, scale: 0.98 }}
@@ -65,14 +65,14 @@ export default function Playground() {
                         <div>
                             <div className="flex items-center gap-3 mb-6">
                                 <ShieldCheck className="w-8 h-8 text-[var(--color-brand-500)]" />
-                                <h3 className="text-3xl font-extrabold text-white">LUMECORE Security</h3>
+                                <h3 className="text-3xl font-extrabold text-[var(--color-text-primary)]">LUMECORE Security</h3>
                             </div>
                             <p className="text-lg text-[var(--color-text-secondary)] leading-relaxed mb-6">
                                 My crown jewel architecture. A real-time synchronization engine bridging GitHub repositories and Penetration Testing tools. It orchestrates Python-based CPU-heavy vulnerability scanners via Node.js Edge backends.
                             </p>
                             <div className="flex flex-wrap gap-2 mb-8">
                                 {["Laravel 11", "Vue 3", "Python", "Supabase", "Gemini 2.5 Flash"].map(tag => (
-                                    <span key={tag} className="px-3 py-1 bg-black border border-[var(--color-brand-500)]/30 text-[var(--color-brand-400)] rounded-md text-xs font-mono font-bold tracking-wider">
+                                    <span key={tag} className="px-3 py-1 bg-[var(--color-bg-secondary)] border border-[var(--color-brand-500)]/30 text-[var(--color-brand-400)] rounded-md text-xs font-mono font-bold tracking-wider">
                                         {tag}
                                     </span>
                                 ))}
@@ -82,7 +82,7 @@ export default function Playground() {
                             </Link>
                         </div>
 
-                        <div className="bg-black border border-white/10 p-6 rounded-2xl shadow-xl flex flex-col gap-4 font-mono text-sm group relative">
+                        <div className="bg-[var(--color-bg-secondary)] border border-[var(--color-border-subtle)] p-6 rounded-2xl shadow-xl flex flex-col gap-4 font-mono text-sm group relative">
                             {/* Simulation Window */}
                             <div className="flex items-center gap-2 mb-2 pb-2 border-b border-gray-800">
                                 <div className="w-3 h-3 rounded-full bg-red-500" />
@@ -105,7 +105,7 @@ export default function Playground() {
                 </motion.div>
 
                 {/* OTHER CARDS */}
-                <h4 className="text-xl font-bold text-white mb-8 border-l-4 border-[#a855f7] pl-4">R&D and Freelance Environments</h4>
+                <h4 className="text-xl font-bold text-[var(--color-text-primary)] mb-8 border-l-4 border-[#a855f7] pl-4">R&D and Freelance Environments</h4>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
                     {PROJECTS.map((project, i) => (
                         <motion.div
@@ -120,7 +120,7 @@ export default function Playground() {
                                     <div className="p-3 bg-[var(--color-bg-secondary)] rounded-xl group-hover:bg-[#a855f7]/10 transition-colors">
                                         <Target className="w-6 h-6 text-[#a855f7]" />
                                     </div>
-                                    <ExternalLink className="text-[var(--color-text-muted)] group-hover:text-white transition-colors w-5 h-5" />
+                                    <ExternalLink className="text-[var(--color-text-muted)] group-hover:text-[var(--color-text-primary)] transition-colors w-5 h-5" />
                                 </div>
                                 <h5 className="text-2xl font-bold text-[var(--color-text-primary)] mb-3">{project.title}</h5>
                                 <p className="text-sm text-[var(--color-text-secondary)] flex-grow mb-6">{project.desc}</p>
@@ -137,7 +137,7 @@ export default function Playground() {
                 </div>
 
                 {/* Live Utilities & API Integrations */}
-                <h4 className="text-xl font-bold text-white mb-8 border-l-4 border-blue-500 pl-4">Live Utilities & APIs</h4>
+                <h4 className="text-xl font-bold text-[var(--color-text-primary)] mb-8 border-l-4 border-blue-500 pl-4">Live Utilities & APIs</h4>
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
 
                     <GitHubZenUtility />

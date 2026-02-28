@@ -8,12 +8,38 @@ export default function Nav() {
     const [isScrolled, setIsScrolled] = useState(false);
     const [mobileOpen, setMobileOpen] = useState(false);
 
+    const [activeSection, setActiveSection] = useState("");
+
     useEffect(() => {
         const handleScroll = () => {
             setIsScrolled(window.scrollY > 20);
         };
         window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        setActiveSection(entry.target.id);
+                    }
+                });
+            },
+            { rootMargin: '-20% 0px -70% 0px' }
+        );
+
+        const sectionIds = ["command-center", "tech-stack", "blueprint", "playground", "manifesto", "uplink"];
+        sectionIds.forEach(id => {
+            const el = document.getElementById(id);
+            if (el) observer.observe(el);
+        });
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+            sectionIds.forEach(id => {
+                const el = document.getElementById(id);
+                if (el) observer.unobserve(el);
+            });
+        };
     }, []);
 
     const navLinks = [
@@ -45,11 +71,20 @@ export default function Nav() {
                     </a>
 
                     <div className="hidden md:flex gap-6 lg:gap-8 text-sm font-medium text-[var(--color-text-secondary)]">
-                        {navLinks.map((link) => (
-                            <a key={link.name} href={link.href} className="hover:text-[var(--color-text-primary)] transition-colors">
-                                {link.name}
-                            </a>
-                        ))}
+                        {navLinks.map((link) => {
+                            const linkId = link.href.replace('/#', '');
+                            const isActive = activeSection === linkId;
+
+                            return (
+                                <a
+                                    key={link.name}
+                                    href={link.href}
+                                    className={`transition-all duration-300 ${isActive ? 'text-[var(--color-brand-500)] font-bold' : 'hover:text-[var(--color-text-primary)]'}`}
+                                >
+                                    {link.name}
+                                </a>
+                            )
+                        })}
                     </div>
 
                     <button
