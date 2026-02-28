@@ -10,7 +10,11 @@ export type Bindings = {
     DATABASE_AUTH_TOKEN: string;
 };
 
-const app = new Hono<{ Bindings: Bindings }>();
+type Variables = {
+    db: any;
+};
+
+const app = new Hono<{ Bindings: Bindings; Variables: Variables }>();
 
 // Global CORS Middleware
 app.use(
