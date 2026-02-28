@@ -82,8 +82,8 @@ export default function Blueprint() {
                                     <motion.circle
                                         animate={{ y: [40, 160], opacity: [0, 1, 0] }}
                                         transition={{ repeat: Infinity, duration: 2, ease: "linear" }}
-                                        cx="200" cy="0" r="4" fill="white"
-                                        className="shadow-[0_0_10px_white]"
+                                        cx="200" cy="0" r="4" fill="currentColor"
+                                        className="text-gray-400 shadow-[0_0_10px_gray]"
                                     />
 
                                     {/* Edge to Compute (Branching) */}
@@ -126,33 +126,33 @@ export default function Blueprint() {
 
                             {/* Nodes overlaying the SVG */}
                             <div className="z-10 w-full flex justify-center mt-0 absolute top-0">
-                                <div className="text-center w-64 bg-[#1a1c23]/80 backdrop-blur-sm border border-gray-600 rounded-lg py-3 shadow-lg border-t-white border-t-2">
-                                    <span className="font-bold text-white text-sm">GitHub Actions (Source/CI)</span>
+                                <div className="text-center w-64 bg-[var(--color-bg-primary)]/90 backdrop-blur-md border border-[var(--color-border-subtle)] rounded-lg py-3 shadow-lg border-t-[var(--color-text-primary)] border-t-2">
+                                    <span className="font-bold text-[var(--color-text-primary)] text-sm">GitHub Actions (Source/CI)</span>
                                 </div>
                             </div>
 
                             <div className="z-10 w-full flex justify-center absolute top-[160px]">
-                                <div className="text-center w-64 bg-orange-900/40 backdrop-blur-sm border border-orange-500/50 rounded-lg py-3 shadow-lg border-t-orange-500 border-t-2">
-                                    <span className="font-bold text-orange-400 text-sm">Cloudflare (Edge/Security)</span>
+                                <div className="text-center w-64 bg-[var(--color-bg-primary)]/90 backdrop-blur-md border border-[var(--color-border-subtle)] rounded-lg py-3 shadow-lg border-t-orange-500 border-t-2">
+                                    <span className="font-bold text-orange-500 text-sm">Cloudflare (Edge/Security)</span>
                                 </div>
                             </div>
 
                             <div className="z-10 w-full flex justify-around px-4 absolute top-[280px]">
-                                <div className="text-center w-40 bg-blue-900/40 backdrop-blur-sm border border-blue-500/50 rounded-lg py-3 shadow-lg border-t-blue-500 border-t-2">
-                                    <span className="font-bold text-blue-400 text-sm">DigitalOcean VMs</span>
+                                <div className="text-center w-40 bg-[var(--color-bg-primary)]/90 backdrop-blur-md border border-[var(--color-border-subtle)] rounded-lg py-3 shadow-lg border-t-blue-500 border-t-2">
+                                    <span className="font-bold text-blue-500 text-sm">DigitalOcean VMs</span>
                                 </div>
-                                <div className="text-center w-40 bg-yellow-900/40 backdrop-blur-sm border border-yellow-500/50 rounded-lg py-3 shadow-lg border-t-yellow-500 border-t-2">
-                                    <span className="font-bold text-yellow-400 text-sm">AWS DB/Queue</span>
+                                <div className="text-center w-40 bg-[var(--color-bg-primary)]/90 backdrop-blur-md border border-[var(--color-border-subtle)] rounded-lg py-3 shadow-lg border-t-yellow-500 border-t-2">
+                                    <span className="font-bold text-yellow-500 text-sm">AWS DB/Queue</span>
                                 </div>
                             </div>
 
                             <div className="z-10 w-full flex justify-center absolute top-[400px]">
-                                <div className="text-center w-64 bg-[var(--color-brand-600)]/30 backdrop-blur-sm border border-[var(--color-brand-500)]/50 rounded-lg py-3 shadow-[0_0_30px_rgba(16,185,129,0.3)] border-t-[var(--color-brand-500)] border-t-2 relative">
+                                <div className="text-center w-64 bg-[var(--color-bg-primary)]/90 backdrop-blur-md border border-[var(--color-border-subtle)] rounded-lg py-3 shadow-lg border-t-[var(--color-brand-500)] border-t-2 relative">
                                     <span className="absolute -left-3 -top-3 flex h-6 w-6">
-                                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                                        <span className="relative inline-flex rounded-full h-6 w-6 bg-emerald-500 border-2 border-black"></span>
+                                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[var(--color-brand-400)] opacity-75"></span>
+                                        <span className="relative inline-flex rounded-full h-6 w-6 bg-[var(--color-brand-500)] border-2 border-[var(--color-bg-primary)]"></span>
                                     </span>
-                                    <span className="font-bold text-[var(--color-brand-400)] text-sm">LLM APIs (Cognitive Core)</span>
+                                    <span className="font-bold text-[var(--color-brand-500)] text-sm">LLM APIs (Cognitive Core)</span>
                                 </div>
                             </div>
 

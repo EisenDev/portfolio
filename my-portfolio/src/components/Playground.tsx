@@ -82,23 +82,24 @@ export default function Playground() {
                             </Link>
                         </div>
 
-                        <div className="bg-[var(--color-bg-secondary)] border border-[var(--color-border-subtle)] p-6 rounded-2xl shadow-xl flex flex-col gap-4 font-mono text-sm group relative">
+                        <div className="bg-[var(--color-bg-secondary)] border border-[var(--color-border-subtle)] p-6 rounded-2xl shadow-xl flex flex-col gap-4 font-mono text-sm group relative overflow-hidden">
+                            <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-bg-primary)]/50 to-transparent pointer-events-none" />
                             {/* Simulation Window */}
-                            <div className="flex items-center gap-2 mb-2 pb-2 border-b border-gray-800">
+                            <div className="flex items-center gap-2 mb-2 pb-2 border-b border-[var(--color-border-subtle)] relative z-10">
                                 <div className="w-3 h-3 rounded-full bg-red-500" />
                                 <div className="w-3 h-3 rounded-full bg-yellow-500" />
                                 <div className="w-3 h-3 rounded-full bg-green-500" />
                                 <span className="text-gray-500 ml-2 tracking-wider text-xs">lumecore-edge-v1</span>
                             </div>
                             <div className="text-blue-400">~ $ lumecore sync --repo org/core</div>
-                            <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ delay: 0.5 }}>
-                                <span className="text-gray-400">[info] Diffing commit 8f3b9c2 vs main...</span>
+                            <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ delay: 0.5 }} className="relative z-10">
+                                <span className="text-[var(--color-text-secondary)]">[info] Diffing commit 8f3b9c2 vs main...</span>
                             </motion.div>
-                            <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ delay: 1.2 }}>
-                                <span className="text-yellow-400">[warn] Analyzing 42 abstract syntax trees for Zero-Days.</span>
+                            <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ delay: 1.2 }} className="relative z-10">
+                                <span className="text-yellow-500">[warn] Analyzing 42 abstract syntax trees for Zero-Days.</span>
                             </motion.div>
-                            <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ delay: 2 }}>
-                                <span className="text-green-400">[ ok ] Synchronization Complete. Dashboards Updated.</span>
+                            <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ delay: 2 }} className="relative z-10">
+                                <span className="text-green-500">[ ok ] Synchronization Complete. Dashboards Updated.</span>
                             </motion.div>
                         </div>
                     </div>

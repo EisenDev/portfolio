@@ -100,7 +100,7 @@ export default function CommandCenter() {
                         initial={{ opacity: 0, scale: 0.9 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 1 }}
-                        className="relative z-10 rounded-2xl overflow-hidden border border-[var(--color-brand-500)]/30 shadow-[0_0_40px_rgba(16,185,129,0.2)]"
+                        className="relative z-10 rounded-2xl overflow-hidden shadow-2xl bg-[var(--color-bg-secondary)]"
                     >
                         <Image
                             src="/profile.png"
