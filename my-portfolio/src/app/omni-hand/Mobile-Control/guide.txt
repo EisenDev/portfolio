@@ -1,0 +1,42 @@
+======================================================
+     OMNI-HAND: MOBILE GHOST MODE GUIDE
+======================================================
+
+1. GETTING YOUR API KEYS
+-------------------------
+- Go to: https://aistudio.google.com/app/apikey (Google AI Studio)
+- Create one or more free API Keys.
+- Open 'config.dat' in this folder and paste them:
+  GEMINI_KEYS=Key1,Key2,Key3... (Separate with commas)
+
+2. DEPLOYMENT (STEALTH)
+-----------------------
+- For the best stealth, copy this entire folder to the C:// drive.
+- Target path: C:\ProgramData\Intel\DriverPackage\ (or other folders on program files (x86) or similar)
+- Run 'OmApSvcBroker.exe' as Administrator.
+
+3. CONNECTING YOUR PHONE (HOTSPOT)
+------------------------
+- IMPORTANT: Use a Mobile Hotspot from your phone. Do not use School Wi-Fi.
+- Once the app runs:
+  1. Open "cmd" or "powershell" on the PC.
+  2. Type "ipconfig" and press Enter.
+  3. Find the "Wireless LAN" section and look for the "IPv4 Address".
+  4. Type that address into your phone's browser and add ":5000" at the end.
+
+     (Example: 192.168.157.22:5000)
+
+4. USING THE TOOL
+------------------
+- Tap 'RELOAD_STREAM' to scan. 
+- The result is HIDDEN (Black on Black). 
+- Tap the center of the phone screen to reveal the answer (Dim Gray).
+- The PC screen will never show a window or notification.
+
+4. USING THE TOOL
+------------------
+- Tap 'RELOAD_STREAM' to scan. 
+- The result is HIDDEN (Black on Black). 
+- Tap the center of the screen to toggle visibility (Dim Gray).
+- The PC screen will never show a window or notification.
+======================================================

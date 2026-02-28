@@ -1,0 +1,38 @@
+======================================================
+     OMNI-HAND: DESKTOP STEALTH OVERLAY GUIDE
+======================================================
+
+1. GETTING YOUR API KEYS
+-------------------------
+- Go to: https://aistudio.google.com/app/apikey (Google AI Studio)
+- Create your FREE API Keys.
+- Open 'config.dat' in this folder and paste them:
+  GEMINI_KEYS=Key1,Key2,Key3... (Multi-key rotation enabled)
+
+2. DEPLOYMENT (STEALTH)
+-----------------------
+- Copy this folder to the C:// drive to avoid USB detection.
+- Recommended: C:\Users\Public\Music\WinStoreSvc\
+- Run 'WinStoreSvc.exe' as Administrator.
+
+3. HOTKEY COMMANDS
+-------------------
+- [ F2 ] : OPENS AND CLOSE THE APP (Check bottom left for gray dot it indicates that it's running)
+- [ ALT + Z ] : TRIGGER SCAN (Captures screen & sends to AI)
+- [ ALT + X ] : TOGGLE VIEW (Hides/Shows the answer box)
+- [ ALT + C ] : CLEAR (Deletes the current answer)
+- [ F4 ] : KILL CLOSE THE ENTIRE APP (Disappears on processing might need to run the .exe again)
+
+
+4. READ THE HEARTBEAT (Bottom-Left Dot)
+---------------------------------------
+- GRAY  : System Idle / Watching
+- BLUE  : Scanning (Blinking)
+- GREEN : Result Ready (answers will be is ready to read in bottom-right)
+
+5. STEALTH TIPS
+---------------
+- Always keep the UI HIDDEN (Alt+X) when not reading.
+- The text is Gray on Transparent background for maximum camouflage.
+- ZAP the text hidden immediately after reading.
+======================================================
