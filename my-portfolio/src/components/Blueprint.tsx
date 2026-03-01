@@ -57,7 +57,7 @@ export default function Blueprint() {
                         initial={{ opacity: 0, scale: 0.95 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
-                        className="relative bg-[#050505] border border-gray-800 rounded-2xl p-8 flex flex-col items-center justify-center space-y-6 lg:h-[600px] overflow-hidden group shadow-[0_0_40px_rgba(0,0,0,0.5)]"
+                        className="relative bg-[#050505] border border-gray-800 rounded-2xl p-8 flex flex-col items-center justify-center space-y-6 min-h-[500px] md:min-h-[600px] overflow-hidden group shadow-[0_0_40px_rgba(0,0,0,0.5)]"
                     >
                         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(59,130,246,0.15),transparent)] pointer-events-none transition-all group-hover:scale-110" />
 

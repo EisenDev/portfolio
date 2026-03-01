@@ -1,8 +1,7 @@
 "use client";
 
-import React from "react";
 import { motion } from "framer-motion";
-import { Code, Server, Database, Cloud, Terminal, PenTool } from "lucide-react";
+import { Code, Server, Database, Cloud, Terminal, PenTool, Hand, ArrowRight } from "lucide-react";
 
 export default function TechStack() {
     const skills = [
@@ -59,6 +58,17 @@ export default function TechStack() {
                         )
                     })}
                 </div>
+
+                {/* Mobile Scroll Indicator */}
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    className="flex md:hidden items-center justify-center gap-2 mt-6 text-[var(--color-text-secondary)] font-mono text-xs tracking-widest"
+                >
+                    <Hand className="w-4 h-4 text-[var(--color-brand-500)] animate-bounce" />
+                    <span>SWIPE TO EXPLORE</span>
+                    <ArrowRight className="w-4 h-4 text-[var(--color-brand-400)]" />
+                </motion.div>
             </div>
         </section>
     );

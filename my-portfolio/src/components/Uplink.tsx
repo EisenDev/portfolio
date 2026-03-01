@@ -88,14 +88,14 @@ export default function Uplink() {
                         Low friction. High ROI. Initiate the uplink sequence below or connect directly through standard channels.
                     </p>
 
-                    <div className="flex flex-wrap gap-4 pt-4">
-                        <a href="https://github.com/EisenDev" target="_blank" rel="noreferrer" className="flex items-center gap-3 px-6 py-3 bg-[var(--color-text-primary)]/5 border border-[var(--color-border-subtle)] text-[var(--color-text-primary)] rounded-lg hover:bg-[var(--color-text-primary)]/10 transition-colors">
+                    <div className="flex flex-col sm:flex-row flex-wrap gap-4 pt-4">
+                        <a href="https://github.com/EisenDev" target="_blank" rel="noreferrer" className="flex items-center justify-center sm:justify-start gap-3 w-full sm:w-auto px-6 py-3 bg-[var(--color-text-primary)]/5 border border-[var(--color-border-subtle)] text-[var(--color-text-primary)] rounded-lg hover:bg-[var(--color-text-primary)]/10 transition-colors">
                             <Github className="w-5 h-5" /> GitHub Root
                         </a>
-                        <a href="https://www.linkedin.com/in/arjay-escabas-8a30413a0/" target="_blank" rel="noreferrer" className="flex items-center gap-3 px-6 py-3 bg-[#0a66c2]/10 border border-[#0a66c2]/50 text-[#0a66c2] hover:bg-[#0a66c2]/20 font-bold rounded-lg transition-colors">
+                        <a href="https://www.linkedin.com/in/arjay-escabas-8a30413a0/" target="_blank" rel="noreferrer" className="flex items-center justify-center sm:justify-start gap-3 w-full sm:w-auto px-6 py-3 bg-[#0a66c2]/10 border border-[#0a66c2]/50 text-[#0a66c2] hover:bg-[#0a66c2]/20 font-bold rounded-lg transition-colors">
                             <Linkedin className="w-5 h-5" /> Signal LinkedIn
                         </a>
-                        <a href="https://v2.onlinejobs.ph/jobseekers/info/4691563" target="_blank" rel="noreferrer" className="flex items-center gap-3 px-6 py-3 bg-orange-500/10 border border-orange-500/50 text-orange-500 hover:bg-orange-500/20 font-bold rounded-lg transition-colors">
+                        <a href="https://v2.onlinejobs.ph/jobseekers/info/4691563" target="_blank" rel="noreferrer" className="flex items-center justify-center sm:justify-start gap-3 w-full sm:w-auto px-6 py-3 bg-orange-500/10 border border-orange-500/50 text-orange-500 hover:bg-orange-500/20 font-bold rounded-lg transition-colors">
                             <Briefcase className="w-5 h-5" /> OJ.ph
                         </a>
                     </div>
@@ -181,7 +181,7 @@ export default function Uplink() {
                             </div>
                         </div>
 
-                        <div className="grid grid-cols-2 gap-4">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div className="flex flex-col gap-2">
                                 <label className="text-sm font-bold text-[var(--color-text-secondary)] uppercase">2. SENDER'S EMAIL</label>
                                 <input

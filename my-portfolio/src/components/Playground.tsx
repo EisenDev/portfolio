@@ -11,7 +11,7 @@ const PROJECTS = [
         id: "iris-ts",
         title: "IRIS-TS",
         desc: "Intelligent Rapid Interface Synthesizer - Atmosphere Engine.",
-        tech: ["Vue 3", "Tailwind CSS", "Gemini Flash", "Vercel"],
+        tech: ["Vue 3", "TypeScript", "Tailwind CSS", "Gemini Flash", "Vercel"],
         href: "/project/iris-ts"
     },
     {
@@ -25,7 +25,7 @@ const PROJECTS = [
         id: "zeraynce",
         title: "Zeraynce Studio",
         desc: "Freelancer and Studio connection platform with booking systems.",
-        tech: ["Laravel", "Supabase", "R2", "Blade"],
+        tech: ["Laravel", "Supabase", "R2", "Blade", "tailwind"],
         href: "/project/zeraynce"
     }
 ];
@@ -71,7 +71,7 @@ export default function Playground() {
                                 My crown jewel architecture. A real-time synchronization engine bridging GitHub repositories and Penetration Testing tools. It orchestrates Python-based CPU-heavy vulnerability scanners via Node.js Edge backends.
                             </p>
                             <div className="flex flex-wrap gap-2 mb-8">
-                                {["Laravel 11", "Vue 3", "Python", "Supabase", "Gemini 2.5 Flash"].map(tag => (
+                                {["Laravel 11", "TypeScript", "Vue 3", "Python", "Supabase", "Gemini 2.5 Flash"].map(tag => (
                                     <span key={tag} className="px-3 py-1 bg-[#111] border border-[var(--color-brand-500)]/30 text-[var(--color-brand-400)] rounded-md text-xs font-mono font-bold tracking-wider">
                                         {tag}
                                     </span>
