@@ -57,7 +57,7 @@ export default function Blueprint() {
                         initial={{ opacity: 0, scale: 0.95 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
-                        className="relative bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-8 flex flex-col items-center justify-center space-y-6 lg:h-[600px] overflow-hidden group shadow-[0_0_40px_rgba(0,0,0,0.5)]"
+                        className="relative bg-[#050505] border border-gray-800 rounded-2xl p-8 flex flex-col items-center justify-center space-y-6 lg:h-[600px] overflow-hidden group shadow-[0_0_40px_rgba(0,0,0,0.5)]"
                     >
                         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(59,130,246,0.15),transparent)] pointer-events-none transition-all group-hover:scale-110" />
 
@@ -126,33 +126,33 @@ export default function Blueprint() {
 
                             {/* Nodes overlaying the SVG */}
                             <div className="z-10 w-full flex justify-center mt-0 absolute top-0">
-                                <div className="text-center w-64 bg-[var(--color-bg-primary)]/90 backdrop-blur-md border border-[var(--color-border-subtle)] rounded-lg py-3 shadow-lg border-t-[var(--color-text-primary)] border-t-2">
-                                    <span className="font-bold text-[var(--color-text-primary)] text-sm">GitHub Actions (Source/CI)</span>
+                                <div className="text-center w-64 bg-[#1a1c23]/90 backdrop-blur-md border border-gray-600 rounded-lg py-3 shadow-lg border-t-white border-t-2">
+                                    <span className="font-bold text-white text-sm">GitHub Actions (Source/CI)</span>
                                 </div>
                             </div>
 
                             <div className="z-10 w-full flex justify-center absolute top-[160px]">
-                                <div className="text-center w-64 bg-[var(--color-bg-primary)]/90 backdrop-blur-md border border-[var(--color-border-subtle)] rounded-lg py-3 shadow-lg border-t-orange-500 border-t-2">
-                                    <span className="font-bold text-orange-500 text-sm">Cloudflare (Edge/Security)</span>
+                                <div className="text-center w-64 bg-orange-950/80 backdrop-blur-md border border-orange-500/50 rounded-lg py-3 shadow-lg border-t-orange-500 border-t-2">
+                                    <span className="font-bold text-orange-400 text-sm">Cloudflare (Edge/Security)</span>
                                 </div>
                             </div>
 
                             <div className="z-10 w-full flex justify-around px-4 absolute top-[280px]">
-                                <div className="text-center w-40 bg-[var(--color-bg-primary)]/90 backdrop-blur-md border border-[var(--color-border-subtle)] rounded-lg py-3 shadow-lg border-t-blue-500 border-t-2">
-                                    <span className="font-bold text-blue-500 text-sm">DigitalOcean VMs</span>
+                                <div className="text-center w-40 bg-blue-950/80 backdrop-blur-md border border-blue-500/50 rounded-lg py-3 shadow-lg border-t-blue-500 border-t-2">
+                                    <span className="font-bold text-blue-400 text-sm">DigitalOcean VMs</span>
                                 </div>
-                                <div className="text-center w-40 bg-[var(--color-bg-primary)]/90 backdrop-blur-md border border-[var(--color-border-subtle)] rounded-lg py-3 shadow-lg border-t-yellow-500 border-t-2">
-                                    <span className="font-bold text-yellow-500 text-sm">AWS DB/Queue</span>
+                                <div className="text-center w-40 bg-yellow-950/80 backdrop-blur-md border border-yellow-500/50 rounded-lg py-3 shadow-lg border-t-yellow-500 border-t-2">
+                                    <span className="font-bold text-yellow-400 text-sm">AWS DB/Queue</span>
                                 </div>
                             </div>
 
                             <div className="z-10 w-full flex justify-center absolute top-[400px]">
-                                <div className="text-center w-64 bg-[var(--color-bg-primary)]/90 backdrop-blur-md border border-[var(--color-border-subtle)] rounded-lg py-3 shadow-lg border-t-[var(--color-brand-500)] border-t-2 relative">
+                                <div className="text-center w-64 bg-emerald-950/80 backdrop-blur-md border border-emerald-500/50 rounded-lg py-3 shadow-lg border-t-emerald-500 border-t-2 relative">
                                     <span className="absolute -left-3 -top-3 flex h-6 w-6">
-                                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[var(--color-brand-400)] opacity-75"></span>
-                                        <span className="relative inline-flex rounded-full h-6 w-6 bg-[var(--color-brand-500)] border-2 border-[var(--color-bg-primary)]"></span>
+                                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                                        <span className="relative inline-flex rounded-full h-6 w-6 bg-emerald-500 border-2 border-black"></span>
                                     </span>
-                                    <span className="font-bold text-[var(--color-brand-500)] text-sm">LLM APIs (Cognitive Core)</span>
+                                    <span className="font-bold text-emerald-400 text-sm">LLM APIs (Cognitive Core)</span>
                                 </div>
                             </div>
 

@@ -69,7 +69,7 @@ export function GitHubZenUtility() {
     return (
         <UtilityCard
             category="RESTful API" categoryIcon={Server} title="GitHub Zen Philosophy" colorTheme="blue"
-            description={<>A live <code className="text-blue-300 bg-blue-900/30 px-1 py-0.5 rounded text-xs ml-1">fetch()</code> request to the official <a href="https://api.github.com/zen" target="_blank" className="border-b border-blue-900 hover:text-blue-300">api.github.com/zen</a> endpoint.</>}
+            description={<>A live <code className="px-2 py-0.5 rounded text-xs ml-1 font-bold text-[var(--color-text-primary)] bg-[var(--color-border-subtle)] shadow-sm">fetch()</code> request to the official <a href="https://api.github.com/zen" target="_blank" className="border-b border-blue-500/30 font-bold hover:text-blue-500">api.github.com/zen</a> endpoint.</>}
             buttonText="EXECUTE REQUEST" buttonIcon={Code} isExecuting={loading} outputNode={output ? `"${output}"` : null}
             buttonAction={async () => {
                 setLoading(true);
@@ -90,7 +90,7 @@ export function IPGeolocationUtility() {
     return (
         <UtilityCard
             category="Network Resolution" categoryIcon={Globe} title="Approximate IP Geolocation" colorTheme="orange"
-            description={<>Resolves public IP location via <code className="text-orange-300 bg-orange-900/30 px-1 py-0.5 rounded text-xs">ipapi.co</code>. (Note: IP-based location points to your ISP's nearest hub, not your exact physical house).</>}
+            description={<>Resolves public IP location via <code className="px-2 py-0.5 rounded text-xs font-bold text-[var(--color-text-primary)] bg-[var(--color-border-subtle)] shadow-sm">ipapi.co</code>. (Note: IP-based location points to your ISP's nearest hub, not your exact physical house).</>}
             buttonText="RESOLVE IP" buttonIcon={Target} isExecuting={loading} outputNode={output}
             buttonAction={async () => {
                 setLoading(true);
@@ -114,7 +114,7 @@ export function HardwareGeolocationUtility() {
     return (
         <UtilityCard
             category="Browser Sensor API" categoryIcon={MapPin} title="Accurate GPS Coordinates" colorTheme="emerald"
-            description={<>Requests exact latitude/longitude from your device's hardware sensors via the browser's native <code className="text-emerald-300 bg-emerald-900/30 px-1 py-0.5 rounded text-xs">navigator.geolocation</code> API.</>}
+            description={<>Requests exact latitude/longitude from your device's hardware sensors via the browser's native <code className="px-2 py-0.5 rounded text-xs font-bold text-[var(--color-text-primary)] bg-[var(--color-border-subtle)] shadow-sm">navigator.geolocation</code> API.</>}
             buttonText="PROMPT GPS SENSOR" buttonIcon={Target} isExecuting={loading} outputNode={output}
             buttonAction={() => {
                 setLoading(true);
@@ -146,7 +146,7 @@ export function SpaceStationUtility() {
     return (
         <UtilityCard
             category="Orbital Telemetry" categoryIcon={Rocket} title="ISS Tracker" colorTheme="yellow"
-            description={<>Fetches the real-time latitude, longitude, and velocity of the International Space Station via <code className="text-yellow-300 bg-yellow-900/30 px-1 py-0.5 rounded text-xs">wheretheiss.at</code>.</>}
+            description={<>Fetches the real-time latitude, longitude, and velocity of the International Space Station via <code className="px-2 py-0.5 rounded text-xs font-bold text-[var(--color-text-primary)] bg-[var(--color-border-subtle)] shadow-sm">wheretheiss.at</code>.</>}
             buttonText="ACQUIRE LOCK" buttonIcon={Target} isExecuting={loading} outputNode={output}
             buttonAction={async () => {
                 setLoading(true);
@@ -172,7 +172,7 @@ export function CatFactUtility() {
     return (
         <UtilityCard
             category="Data Aggregation" categoryIcon={Cat} title="Feline Intelligence" colorTheme="purple"
-            description={<>Pings a lightweight RESTful API at <code className="text-purple-300 bg-purple-900/30 px-1 py-0.5 rounded text-xs">catfact.ninja</code> to retrieve a random, verified cat fact.</>}
+            description={<>Pings a lightweight RESTful API at <code className="px-2 py-0.5 rounded text-xs font-bold text-[var(--color-text-primary)] bg-[var(--color-border-subtle)] shadow-sm">catfact.ninja</code> to retrieve a random, verified cat fact.</>}
             buttonText="GENERATE FACT" buttonIcon={Code} isExecuting={loading} outputNode={output ? `> ${output}` : null}
             buttonAction={async () => {
                 setLoading(true);
@@ -194,7 +194,7 @@ export function UserAgentUtility() {
     return (
         <UtilityCard
             category="Browser Environment" categoryIcon={Terminal} title="Client Signature" colorTheme="cyan"
-            description={<>Reads and breaks down the active <code className="text-cyan-300 bg-cyan-900/30 px-1 py-0.5 rounded text-xs">navigator.userAgent</code> string passing data tracking footprints directly from execution.</>}
+            description={<>Reads and breaks down the active <code className="px-2 py-0.5 rounded text-xs font-bold text-[var(--color-text-primary)] bg-[var(--color-border-subtle)] shadow-sm">navigator.userAgent</code> string passing data tracking footprints directly from execution.</>}
             buttonText="ANALYZE SIGNATURE" buttonIcon={MonitorSmartphone} isExecuting={loading} outputNode={output}
             buttonAction={() => {
                 setLoading(true);
@@ -214,7 +214,7 @@ export function ScreenMetricsUtility() {
     return (
         <UtilityCard
             category="Device Introspection" categoryIcon={MonitorSmartphone} title="Viewport Telemetry" colorTheme="pink"
-            description={<>Interrogates the DOM <code className="text-pink-300 bg-pink-900/30 px-1 py-0.5 rounded text-xs">window.screen</code> object to report exact physical rendering metrics and color depth.</>}
+            description={<>Interrogates the DOM <code className="px-2 py-0.5 rounded text-xs font-bold text-[var(--color-text-primary)] bg-[var(--color-border-subtle)] shadow-sm">window.screen</code> object to report exact physical rendering metrics and color depth.</>}
             buttonText="RUN METRICS" buttonIcon={Target} isExecuting={loading} outputNode={output}
             buttonAction={() => {
                 setLoading(true);
@@ -236,7 +236,7 @@ export function RandomJokeUtility() {
     return (
         <UtilityCard
             category="External Microservice" categoryIcon={Smile} title="Algorithmic Humor" colorTheme="red"
-            description={<>Executes a GET request to the <code className="text-red-300 bg-red-900/30 px-1 py-0.5 rounded text-xs">official-joke-api</code> appspot backend to parse an algorithmic punchline.</>}
+            description={<>Executes a GET request to the <code className="px-2 py-0.5 rounded text-xs font-bold text-[var(--color-text-primary)] bg-[var(--color-border-subtle)] shadow-sm">official-joke-api</code> appspot backend to parse an algorithmic punchline.</>}
             buttonText="INVOKE HUMOR" buttonIcon={Code} isExecuting={loading} outputNode={output}
             buttonAction={async () => {
                 setLoading(true);
@@ -258,7 +258,7 @@ export function BatteryStatusUtility() {
     return (
         <UtilityCard
             category="Hardware Telemetry" categoryIcon={Cpu} title="Battery Status API" colorTheme="indigo"
-            description={<>Queries your device's native <code className="text-indigo-300 bg-indigo-900/30 px-1 py-0.5 rounded text-xs">navigator.getBattery()</code> API to retrieve real-time power levels and charging status.</>}
+            description={<>Queries your device's native <code className="px-2 py-0.5 rounded text-xs font-bold text-[var(--color-text-primary)] bg-[var(--color-border-subtle)] shadow-sm">navigator.getBattery()</code> API to retrieve real-time power levels and charging status.</>}
             buttonText="CHECK STATUS" buttonIcon={Cpu} isExecuting={loading} outputNode={output}
             buttonAction={async () => {
                 setLoading(true);
@@ -295,7 +295,7 @@ export function DNSLookupUtility() {
     return (
         <UtilityCard
             category="Network Protocol" categoryIcon={Network} title="DoH Resolver" colorTheme="teal"
-            description={<>Performs a secure DNS-over-HTTPS (DoH) resolution query against <code className="text-teal-300 bg-teal-900/30 px-1 py-0.5 rounded text-xs">dns.google</code> to resolve records.</>}
+            description={<>Performs a secure DNS-over-HTTPS (DoH) resolution query against <code className="px-2 py-0.5 rounded text-xs font-bold text-[var(--color-text-primary)] bg-[var(--color-border-subtle)] shadow-sm">dns.google</code> to resolve records.</>}
             buttonText="RESOLVE GITHUB.COM" buttonIcon={Search} isExecuting={loading} outputNode={output}
             buttonAction={async () => {
                 setLoading(true);

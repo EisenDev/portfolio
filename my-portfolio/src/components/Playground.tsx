@@ -56,7 +56,7 @@ export default function Playground() {
                     initial={{ opacity: 0, scale: 0.98 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
-                    className="bg-[linear-gradient(to_bottom_right,#050505,rgba(16,185,129,0.05))] border border-[var(--color-brand-600)] p-8 lg:p-12 xl:p-16 rounded-3xl shadow-[0_0_50px_rgba(16,185,129,0.1)] mb-16 relative overflow-hidden group"
+                    className="bg-[#050505] border border-[var(--color-brand-600)] p-8 lg:p-12 xl:p-16 rounded-3xl shadow-[0_0_50px_rgba(16,185,129,0.1)] mb-16 relative overflow-hidden group"
                 >
                     {/* Decorative Overlay */}
                     <div className="absolute -right-20 -bottom-20 w-64 h-64 bg-[var(--color-brand-500)]/10 blur-[80px] rounded-full group-hover:bg-[var(--color-brand-500)]/20 transition-all duration-700" />
@@ -65,14 +65,14 @@ export default function Playground() {
                         <div>
                             <div className="flex items-center gap-3 mb-6">
                                 <ShieldCheck className="w-8 h-8 text-[var(--color-brand-500)]" />
-                                <h3 className="text-3xl font-extrabold text-[var(--color-text-primary)]">LUMECORE Security</h3>
+                                <h3 className="text-3xl font-extrabold text-white">LUMECORE Security</h3>
                             </div>
-                            <p className="text-lg text-[var(--color-text-secondary)] leading-relaxed mb-6">
+                            <p className="text-lg text-gray-300 leading-relaxed mb-6">
                                 My crown jewel architecture. A real-time synchronization engine bridging GitHub repositories and Penetration Testing tools. It orchestrates Python-based CPU-heavy vulnerability scanners via Node.js Edge backends.
                             </p>
                             <div className="flex flex-wrap gap-2 mb-8">
                                 {["Laravel 11", "Vue 3", "Python", "Supabase", "Gemini 2.5 Flash"].map(tag => (
-                                    <span key={tag} className="px-3 py-1 bg-[var(--color-bg-secondary)] border border-[var(--color-brand-500)]/30 text-[var(--color-brand-400)] rounded-md text-xs font-mono font-bold tracking-wider">
+                                    <span key={tag} className="px-3 py-1 bg-[#111] border border-[var(--color-brand-500)]/30 text-[var(--color-brand-400)] rounded-md text-xs font-mono font-bold tracking-wider">
                                         {tag}
                                     </span>
                                 ))}
@@ -82,18 +82,17 @@ export default function Playground() {
                             </Link>
                         </div>
 
-                        <div className="bg-[var(--color-bg-secondary)] border border-[var(--color-border-subtle)] p-6 rounded-2xl shadow-xl flex flex-col gap-4 font-mono text-sm group relative overflow-hidden">
-                            <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-bg-primary)]/50 to-transparent pointer-events-none" />
+                        <div className="bg-[#111] border border-gray-800 p-6 rounded-2xl shadow-xl flex flex-col gap-4 font-mono text-sm group relative overflow-hidden">
                             {/* Simulation Window */}
-                            <div className="flex items-center gap-2 mb-2 pb-2 border-b border-[var(--color-border-subtle)] relative z-10">
+                            <div className="flex items-center gap-2 mb-2 pb-2 border-b border-gray-800 relative z-10">
                                 <div className="w-3 h-3 rounded-full bg-red-500" />
                                 <div className="w-3 h-3 rounded-full bg-yellow-500" />
                                 <div className="w-3 h-3 rounded-full bg-green-500" />
                                 <span className="text-gray-500 ml-2 tracking-wider text-xs">lumecore-edge-v1</span>
                             </div>
-                            <div className="text-blue-400">~ $ lumecore sync --repo org/core</div>
+                            <div className="text-blue-400 relative z-10">~ $ lumecore sync --repo org/core</div>
                             <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ delay: 0.5 }} className="relative z-10">
-                                <span className="text-[var(--color-text-secondary)]">[info] Diffing commit 8f3b9c2 vs main...</span>
+                                <span className="text-gray-400">[info] Diffing commit 8f3b9c2 vs main...</span>
                             </motion.div>
                             <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ delay: 1.2 }} className="relative z-10">
                                 <span className="text-yellow-500">[warn] Analyzing 42 abstract syntax trees for Zero-Days.</span>
