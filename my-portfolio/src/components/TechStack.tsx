@@ -31,7 +31,7 @@ export default function TechStack() {
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="flex overflow-x-auto snap-x snap-mandatory md:grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 pb-4 md:pb-0 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
                     {skills.map((skillGroup, index) => {
                         const Icon = skillGroup.icon;
                         return (
@@ -41,16 +41,16 @@ export default function TechStack() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: index * 0.1 }}
-                                className="bg-[var(--color-bg-primary)] border border-[var(--color-border-subtle)] p-8 rounded-2xl shadow-xl hover:border-[var(--color-brand-500)]/50 hover:shadow-[0_0_30px_rgba(16,185,129,0.15)] transition-all group"
+                                className="min-w-[85vw] sm:min-w-[300px] md:min-w-0 snap-center md:snap-align-none bg-[var(--color-bg-primary)] border border-[var(--color-border-subtle)] p-6 md:p-8 rounded-2xl shadow-xl hover:border-[var(--color-brand-500)]/50 hover:shadow-[0_0_30px_rgba(16,185,129,0.15)] transition-all group"
                             >
-                                <div className="w-12 h-12 rounded-xl bg-[var(--color-bg-secondary)] border border-[var(--color-border-subtle)] flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-[var(--color-brand-500)]/10 group-hover:border-[var(--color-brand-500)]/30 transition-all">
-                                    <Icon className="w-6 h-6 text-[var(--color-brand-500)]" />
+                                <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-[var(--color-bg-secondary)] border border-[var(--color-border-subtle)] flex items-center justify-center mb-5 md:mb-6 group-hover:scale-110 group-hover:bg-[var(--color-brand-500)]/10 group-hover:border-[var(--color-brand-500)]/30 transition-all">
+                                    <Icon className="w-5 h-5 md:w-6 md:h-6 text-[var(--color-brand-500)]" />
                                 </div>
-                                <h4 className="text-xl font-mono font-bold text-[var(--color-text-primary)] mb-4">{skillGroup.category}</h4>
-                                <ul className="space-y-3">
+                                <h4 className="text-lg md:text-xl font-mono font-bold text-[var(--color-text-primary)] mb-4">{skillGroup.category}</h4>
+                                <ul className="space-y-2 md:space-y-3">
                                     {skillGroup.items.map(item => (
-                                        <li key={item} className="flex items-center gap-3 text-[var(--color-text-secondary)] font-medium">
-                                            <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-brand-500)] opacity-70 group-hover:opacity-100 group-hover:shadow-[0_0_8px_var(--color-brand-500)] transition-all" />
+                                        <li key={item} className="flex items-center gap-3 text-sm md:text-base text-[var(--color-text-secondary)] font-medium">
+                                            <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-brand-500)] opacity-70 group-hover:opacity-100 group-hover:shadow-[0_0_8px_var(--color-brand-500)] transition-all flex-shrink-0" />
                                             {item}
                                         </li>
                                     ))}
