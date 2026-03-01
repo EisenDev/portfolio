@@ -71,7 +71,7 @@ const PROJECT_DATA: Record<string, any> = {
         icon: Zap,
         themeColor: "#06b6d4",
         themeGlow: "rgba(6,182,212,0.3)",
-        tags: ["Vue 3", "Tailwind CSS", "Gemini Flash", "Vercel SDK"],
+        tags: ["Vue 3", "TypeScript", "Tailwind CSS", "Gemini Flash", "Vercel SDK"],
         overview: "IRIS-TS (Intelligent Rapid Interface Synthesizer - TypeScript) is an advanced, AI-driven architectural synthesizer built to dynamically generate, refine, and deploy completely functioning, ultra-premium front-end web environments.",
         challenge: "Generic prototyping phases are slow, expensive, and often decoupled from the final production codebase, leading to 'design debt' and slow iteration cycles.",
         solution: "Transforming visual input into pixel-perfect Vue 3 codebases. IRIS-TS features Live Lens intake, real-time DOM editing, and one-click Vercel deployments, effectively merging design and development into a single fluid motion.",
@@ -959,22 +959,22 @@ function AtmosphereEngine({ project }: { project: any }) {
 
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-24">
                     {/* Left: Overview */}
-                    <motion.section 
-                        initial={{ opacity: 0, x: -30 }} 
-                        animate={{ opacity: 1, x: 0 }} 
+                    <motion.section
+                        initial={{ opacity: 0, x: -30 }}
+                        animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: 0.2 }}
                         className="lg:col-span-7 bg-slate-900/50 backdrop-blur-xl border border-slate-800 p-10 md:p-16 rounded-[40px] shadow-2xl relative overflow-hidden flex flex-col justify-center"
                     >
                         <div className="absolute -right-20 -top-20 w-80 h-80 bg-cyan-500/10 blur-[100px] rounded-full" />
-                        
+
                         <h2 className="text-xs font-mono tracking-[0.5em] font-black text-cyan-500 mb-8 flex items-center gap-4 uppercase">
                             <Focus className="w-5 h-5" /> Executive Summary
                         </h2>
-                        
+
                         <p className="text-2xl md:text-3xl text-white leading-[1.6] font-light mb-8">
                             {project.overview}
                         </p>
-                        
+
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12 pt-12 border-t border-slate-800">
                             <div>
                                 <h3 className="text-xs font-mono font-black text-rose-500 mb-4 tracking-widest uppercase">The Disconnect</h3>
@@ -988,9 +988,9 @@ function AtmosphereEngine({ project }: { project: any }) {
                     </motion.section>
 
                     {/* Right: Technical Stats / Dashboard */}
-                    <motion.div 
-                        initial={{ opacity: 0, x: 30 }} 
-                        animate={{ opacity: 1, x: 0 }} 
+                    <motion.div
+                        initial={{ opacity: 0, x: 30 }}
+                        animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: 0.4 }}
                         className="lg:col-span-5 flex flex-col gap-8"
                     >
@@ -1013,7 +1013,7 @@ function AtmosphereEngine({ project }: { project: any }) {
                                     if (log.includes("[info]")) textColor = "text-cyan-400";
                                     if (log.includes("[warn]")) textColor = "text-amber-400";
                                     if (log.includes("[ ok ]")) textColor = "text-emerald-400 font-bold";
-                                    
+
                                     return (
                                         <motion.div key={i} initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} className={`${textColor} flex gap-4`}>
                                             <span className="text-slate-800 select-none shrink-0">{`0${i + 1}`}</span>
@@ -1039,40 +1039,40 @@ function AtmosphereEngine({ project }: { project: any }) {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-24">
                     {[
-                        { 
-                            title: "Visual Intake", 
-                            desc: "Natively extracts mood, layout, and hex codes from screenshots or live webcam feeds.", 
-                            icon: Laptop, 
-                            color: "text-cyan-400", 
-                            bg: "bg-cyan-500/10" 
+                        {
+                            title: "Visual Intake",
+                            desc: "Natively extracts mood, layout, and hex codes from screenshots or live webcam feeds.",
+                            icon: Laptop,
+                            color: "text-cyan-400",
+                            bg: "bg-cyan-500/10"
                         },
-                        { 
-                            title: "DOM Manipulation", 
-                            desc: "Interactive iframe rendering for instant click-to-edit text and asset injection.", 
-                            icon: Code, 
-                            color: "text-emerald-400", 
-                            bg: "bg-emerald-500/10" 
+                        {
+                            title: "DOM Manipulation",
+                            desc: "Interactive iframe rendering for instant click-to-edit text and asset injection.",
+                            icon: Code,
+                            color: "text-emerald-400",
+                            bg: "bg-emerald-500/10"
                         },
-                        { 
-                            title: "Refinement", 
-                            desc: "Surgical codebase mutations through conversational AI—preserve edits, change structure.", 
-                            icon: Activity, 
-                            color: "text-amber-400", 
-                            bg: "bg-amber-500/10" 
+                        {
+                            title: "Refinement",
+                            desc: "Surgical codebase mutations through conversational AI—preserve edits, change structure.",
+                            icon: Activity,
+                            color: "text-amber-400",
+                            bg: "bg-amber-500/10"
                         },
-                        { 
-                            title: "Cloud Deploy", 
-                            desc: "Native Vercel SDK integration for one-click publishing to the global edge network.", 
-                            icon: Cloud, 
-                            color: "text-blue-400", 
-                            bg: "bg-blue-500/10" 
+                        {
+                            title: "Cloud Deploy",
+                            desc: "Native Vercel SDK integration for one-click publishing to the global edge network.",
+                            icon: Cloud,
+                            color: "text-blue-400",
+                            bg: "bg-blue-500/10"
                         },
-                        { 
-                            title: "Auto-Healing", 
-                            desc: "Embedded jsonrepair layer converts malformed AI payloads into valid UI architecture.", 
-                            icon: ShieldCheck, 
-                            color: "text-indigo-400", 
-                            bg: "bg-indigo-500/10" 
+                        {
+                            title: "Auto-Healing",
+                            desc: "Embedded jsonrepair layer converts malformed AI payloads into valid UI architecture.",
+                            icon: ShieldCheck,
+                            color: "text-indigo-400",
+                            bg: "bg-indigo-500/10"
                         }
                     ].map((feature, i) => (
                         <motion.div
@@ -1100,7 +1100,7 @@ function AtmosphereEngine({ project }: { project: any }) {
                     className="bg-gradient-to-br from-slate-900 to-slate-950 border border-slate-800 rounded-[50px] p-12 md:p-20 relative overflow-hidden text-center"
                 >
                     <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10 pointer-events-none" />
-                    
+
                     <h4 className="text-xs font-mono font-black text-cyan-500 tracking-[0.5em] uppercase mb-6">Synthesis Topology</h4>
                     <h3 className="text-3xl md:text-5xl font-black text-white mb-12 tracking-tight">The AI-Native Workflow.</h3>
 
