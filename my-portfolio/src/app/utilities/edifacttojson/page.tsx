@@ -1,8 +1,9 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import Link from "next/link";
 import { parseEDIFACT, EDIFACTMessage } from "@/utils/edifactParser";
-import { Terminal, Code, FileJson, Copy, Check, Info } from "lucide-react";
+import { Terminal, Code, FileJson, Copy, Check, Info, ArrowLeft } from "lucide-react";
 
 export default function EdifactPage() {
     const defaultEdifact = "UNH+1+ORDERS:D:96A:UN:EAN008'BGM+220+PO-2024-001+9'LIN+1++4006381333931:SRV'QTY+21:50'PRI+AAA:12.50'";
@@ -30,8 +31,16 @@ export default function EdifactPage() {
     };
 
     return (
-        <div className="min-h-screen bg-[var(--color-bg-primary)] text-[var(--color-text-primary)] p-8 font-sans">
+        <div className="min-h-screen bg-[var(--color-bg-primary)] text-[var(--color-text-primary)] p-8 font-sans pt-32 pb-32">
             <div className="max-w-4xl mx-auto space-y-8">
+                {/* Navigation */}
+                <Link href="/utilities" className="group flex items-center gap-3 text-sm font-mono font-bold tracking-widest text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] transition-colors mb-8 max-w-max">
+                    <div className="p-2 bg-[var(--color-bg-secondary)] border border-[var(--color-border-subtle)] rounded group-hover:border-[var(--color-text-primary)] transition-colors">
+                        <ArrowLeft className="w-4 h-4" />
+                    </div>
+                    CD .. / BACK TO UTILITIES
+                </Link>
+
                 {/* Header */}
                 <div className="space-y-2">
                     <div className="flex items-center gap-3">

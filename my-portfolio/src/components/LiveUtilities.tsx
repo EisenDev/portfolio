@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
-import { LucideIcon, Server, Globe, Cpu, Code, Target, MapPin, Rocket, Cat, MonitorSmartphone, Key, Network, Smile, Terminal, Search } from "lucide-react";
+import { useRouter } from "next/navigation";
+import { LucideIcon, Server, Globe, Cpu, Code, Target, MapPin, Rocket, Cat, MonitorSmartphone, Key, Network, Smile, Terminal, Search, FileText, ExternalLink } from "lucide-react";
 
 interface UtilityCardProps {
     category: string;
@@ -317,7 +318,7 @@ export function DNSLookupUtility() {
 // 11. EDIFACT Parser
 export function EDIFACTParserUtility() {
     const [isExecuting, setIsExecuting] = useState(false);
-    const { push } = require('next/navigation').useRouter();
+    const router = useRouter();
 
     return (
         <UtilityCard
@@ -331,7 +332,7 @@ export function EDIFACTParserUtility() {
             isExecuting={isExecuting}
             buttonAction={() => {
                 setIsExecuting(true);
-                push('/edifcattojson');
+                router.push('/utilities/edifacttojson');
             }}
         />
     );
