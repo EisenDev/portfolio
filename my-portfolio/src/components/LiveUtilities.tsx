@@ -314,3 +314,25 @@ export function DNSLookupUtility() {
         />
     );
 }
+// 11. EDIFACT Parser
+export function EDIFACTParserUtility() {
+    const [isExecuting, setIsExecuting] = useState(false);
+    const { push } = require('next/navigation').useRouter();
+
+    return (
+        <UtilityCard
+            category="Electronic Data Interchange"
+            categoryIcon={FileText}
+            title="EDIFACT to JSON Parser"
+            colorTheme="indigo"
+            description={<>A specialized parser that converts raw EDIFACT message segments into a structured JSON hierarchy using custom extraction logic.</>}
+            buttonText="OPEN PARSER"
+            buttonIcon={ExternalLink}
+            isExecuting={isExecuting}
+            buttonAction={() => {
+                setIsExecuting(true);
+                push('/edifcattojson');
+            }}
+        />
+    );
+}

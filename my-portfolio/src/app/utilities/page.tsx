@@ -11,7 +11,8 @@ import {
     ScreenMetricsUtility,
     RandomJokeUtility,
     BatteryStatusUtility,
-    DNSLookupUtility
+    DNSLookupUtility,
+    EDIFACTParserUtility
 } from '@/components/LiveUtilities';
 
 export default function UtilitiesPage() {
@@ -34,7 +35,7 @@ export default function UtilitiesPage() {
                         Live Utilities & APIs
                     </h1>
                     <p className="text-xl text-[var(--color-text-secondary)] max-w-3xl font-light leading-relaxed">
-                        A 10-module collection of active diagnostic tools, hardware sensor APIs, cryptographically secure generators, and external data streams executing in real-time.
+                        A 11-module collection of active diagnostic tools, hardware sensor APIs, cryptographically secure generators, and external data streams executing in real-time.
                     </p>
                 </header>
 
@@ -49,8 +50,9 @@ export default function UtilitiesPage() {
 
                     <DNSLookupUtility />
                     <GitHubZenUtility />
-                    <RandomJokeUtility />
+                    <EDIFACTParserUtility />
 
+                    <RandomJokeUtility />
                     <CatFactUtility />
                 </div>
             </div>

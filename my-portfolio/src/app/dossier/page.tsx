@@ -3,8 +3,10 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Download, ArrowLeft, ExternalLink, ShieldCheck, Cpu, Code, Database, Monitor, Search, Layers, X, FileText, Award } from "lucide-react";
+import { Download, ArrowLeft, ExternalLink, ShieldCheck, Cpu, Code, Database, Monitor, Search, Layers, X, FileText, Award, FileUser } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { toPng } from "html-to-image";
+import jsPDF from "jspdf";
 
 const CERTIFICATES: Array<{
     title: string;
@@ -91,9 +93,75 @@ const CERTIFICATES: Array<{
 
 export default function DossierPage() {
     const [selectedCert, setSelectedCert] = useState<typeof CERTIFICATES[0] | null>(null);
+    const [isExporting, setIsExporting] = useState(false);
+
+    const handleExportPDF = async () => {
+        const element = document.getElementById("dossier-content");
+        if (!element) return;
+
+        setIsExporting(true);
+        try {
+            // Inject a style to force visibility of all elements and handle animations
+            const style = document.createElement("style");
+            style.id = "pdf-export-style";
+            style.innerHTML = `
+                .pdf-ignore { display: none !important; }
+                #dossier-content * { 
+                    opacity: 1 !important; 
+                    transform: none !important; 
+                    visibility: visible !important;
+                    transition: none !important;
+                    animation: none !important;
+                }
+            `;
+            document.head.appendChild(style);
+
+            // Wait a bit for styles to apply
+            await new Promise(resolve => setTimeout(resolve, 500));
+
+            const dataUrl = await toPng(element, {
+                cacheBust: true,
+                backgroundColor: "#050505",
+                pixelRatio: 2,
+                height: element.scrollHeight,
+                width: element.clientWidth,
+            });
+
+            // Restore hidden elements
+            const styleElement = document.getElementById("pdf-export-style");
+            if (styleElement) styleElement.remove();
+
+            const pdf = new jsPDF("p", "mm", "a4");
+            const imgProps = pdf.getImageProperties(dataUrl);
+            const pdfWidth = pdf.internal.pageSize.getWidth();
+            const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+
+            const pageHeight = pdf.internal.pageSize.getHeight();
+            let heightLeft = pdfHeight;
+            let position = 0;
+
+            // Add first page
+            pdf.addImage(dataUrl, "PNG", 0, position, pdfWidth, pdfHeight);
+            heightLeft -= pageHeight;
+
+            // Add subsequent pages if content exceeds A4 height
+            while (heightLeft > 0) {
+                position = heightLeft - pdfHeight;
+                pdf.addPage();
+                pdf.addImage(dataUrl, "PNG", 0, position, pdfWidth, pdfHeight);
+                heightLeft -= pageHeight;
+            }
+
+            pdf.save("ARJAY_ESCABAS_DOSSIER.pdf");
+        } catch (error) {
+            console.error("PDF Export failed:", error);
+        } finally {
+            setIsExporting(false);
+        }
+    };
 
     return (
-        <main className="min-h-screen bg-[var(--color-bg-primary)] text-[var(--color-text-primary)] pb-32 relative overflow-hidden">
+        <main id="dossier-content" className="min-h-screen bg-[var(--color-bg-primary)] text-[var(--color-text-primary)] pb-32 relative overflow-hidden">
 
             {/* Ambient Background Grid */}
             <div className="absolute inset-0 z-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(16,185,129,0.1),transparent)] pointer-events-none" />
@@ -101,7 +169,7 @@ export default function DossierPage() {
 
             <div className="container mx-auto px-6 lg:px-12 pt-16 lg:pt-24 max-w-6xl relative z-10">
 
-                <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }}>
+                <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} className="pdf-ignore">
                     <Link href="/" className="group inline-flex items-center gap-3 text-xs md:text-sm font-mono font-bold tracking-widest text-[var(--color-text-secondary)] hover:text-[var(--color-brand-400)] transition-colors mb-8 md:mb-16 backdrop-blur-md bg-[var(--color-bg-secondary)]/50 border border-[var(--color-border-subtle)] pr-4 rounded-full">
                         <div className="p-2 bg-[var(--color-brand-500)]/10 rounded-full group-hover:bg-[var(--color-brand-500)]/20 transition-colors text-[var(--color-brand-500)]">
                             <ArrowLeft className="w-4 h-4" />
@@ -127,11 +195,28 @@ export default function DossierPage() {
                         </p>
                     </motion.div>
 
-                    <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="flex lg:justify-end">
-                        <button className="flex items-center gap-3 px-6 py-3 md:px-8 md:py-4 bg-[var(--color-bg-secondary)] border border-[var(--color-border-subtle)] hover:border-[var(--color-brand-500)]/50 hover:bg-[var(--color-brand-500)]/10 text-[var(--color-text-primary)] rounded-2xl text-xs md:text-sm font-bold tracking-widest uppercase transition-all shadow-xl group">
-                            <Download className="w-5 h-5 group-hover:translate-y-1 transition-transform text-[var(--color-brand-400)]" />
+                    <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="flex lg:justify-end gap-4 pdf-ignore">
+                        <Link
+                            href="/Resume/ARJAY_ESCABAS_RESUME.pdf"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center gap-3 px-6 py-3 md:px-8 md:py-4 bg-[var(--color-bg-secondary)] border border-[var(--color-border-subtle)] hover:border-[var(--color-brand-500)]/50 hover:bg-[var(--color-brand-500)]/10 text-[var(--color-text-primary)] rounded-2xl text-xs md:text-sm font-bold tracking-widest uppercase transition-all shadow-xl group"
+                        >
+                            <FileUser className="w-5 h-5 group-hover:-translate-y-1 transition-transform text-[var(--color-brand-400)]" />
                             <div className="flex flex-col items-start leading-none gap-1">
-                                <span>Export PDF</span>
+                                <span>View Resume</span>
+                                <span className="text-[10px] font-mono text-[var(--color-brand-500)]/70">OFFICIAL ARCHIVE</span>
+                            </div>
+                        </Link>
+
+                        <button
+                            onClick={handleExportPDF}
+                            disabled={isExporting}
+                            className={`flex items-center gap-3 px-6 py-3 md:px-8 md:py-4 bg-[var(--color-bg-secondary)] border border-[var(--color-border-subtle)] hover:border-[var(--color-brand-500)]/50 hover:bg-[var(--color-brand-500)]/10 text-[var(--color-text-primary)] rounded-2xl text-xs md:text-sm font-bold tracking-widest uppercase transition-all shadow-xl group disabled:opacity-50 disabled:cursor-not-allowed`}
+                        >
+                            <Download className={`w-5 h-5 ${isExporting ? 'animate-bounce' : 'group-hover:translate-y-1'} transition-transform text-[var(--color-brand-400)]`} />
+                            <div className="flex flex-col items-start leading-none gap-1">
+                                <span>{isExporting ? "Processing..." : "Export PDF"}</span>
                                 <span className="text-[10px] font-mono text-[var(--color-brand-500)]/70">SHA-256 VERIFIED</span>
                             </div>
                         </button>
