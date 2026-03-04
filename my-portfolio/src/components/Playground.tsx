@@ -3,7 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ExternalLink, Figma, Code, Box, Target, ShieldCheck, Database, Server, Globe, Cpu, ArrowRight } from "lucide-react";
+import { ExternalLink, Figma, Code, Box, Target, ShieldCheck, Database, Server, Globe, Cpu, ArrowRight, Github, Lock, BrainCircuit, BarChart3 } from "lucide-react";
 import { GitHubZenUtility, IPGeolocationUtility, HardwareGeolocationUtility, SpaceStationUtility } from "./LiveUtilities";
 
 const PROJECTS = [
@@ -28,6 +28,16 @@ const PROJECTS = [
         tech: ["Laravel", "Supabase", "R2", "Blade", "tailwind"],
         href: "/project/zeraynce"
     }
+];
+
+const VERITY_LANG_STACK = [
+    { label: "Vue", pct: 76.9, color: "#41b883" },
+    { label: "TypeScript", pct: 19.9, color: "#3178c6" },
+    { label: "Shell", pct: 1.7, color: "#89e051" },
+    { label: "CSS", pct: 0.5, color: "#563d7c" },
+    { label: "Dockerfile", pct: 0.4, color: "#384d54" },
+    { label: "JavaScript", pct: 0.3, color: "#f1e05a" },
+    { label: "HTML", pct: 0.3, color: "#e34c26" },
 ];
 
 export default function Playground() {
@@ -102,6 +112,126 @@ export default function Playground() {
                             </motion.div>
                         </div>
                     </div>
+                </motion.div>
+
+                {/* VERITY FEATURED CARD */}
+                <h4 className="text-xl font-bold text-[var(--color-text-primary)] mb-8 border-l-4 border-amber-500 pl-4">Enterprise SaaS</h4>
+
+                <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="mb-16 relative"
+                >
+                    <Link href="/project/verity" className="block group">
+                        <div className="bg-gradient-to-br from-[#060810] via-[#080c18] to-[#050709] border border-amber-500/25 rounded-3xl p-8 lg:p-12 hover:border-amber-500/50 hover:shadow-[0_0_60px_rgba(245,158,11,0.12)] transition-all duration-500 relative overflow-hidden">
+                            {/* Background Glow */}
+                            <div className="absolute -right-20 -top-20 w-80 h-80 bg-amber-500/5 blur-[100px] rounded-full group-hover:bg-amber-500/10 transition-all duration-700" />
+                            <div className="absolute -left-10 -bottom-10 w-60 h-60 bg-amber-900/10 blur-[80px] rounded-full" />
+
+                            {/* Scan line animation */}
+                            <div className="absolute inset-0 overflow-hidden rounded-3xl pointer-events-none">
+                                <motion.div
+                                    animate={{ top: ["-2%", "102%"] }}
+                                    transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
+                                    className="absolute left-0 right-0 h-px bg-gradient-to-r from-transparent via-amber-400/30 to-transparent"
+                                />
+                            </div>
+
+                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 relative z-10">
+                                {/* Left: Identity */}
+                                <div className="flex flex-col">
+                                    <div className="flex items-center gap-3 mb-5">
+                                        <div className="p-2.5 bg-amber-500/10 border border-amber-500/30 rounded-xl">
+                                            <ShieldCheck className="w-7 h-7 text-amber-400" />
+                                        </div>
+                                        <div>
+                                            <div className="text-[10px] font-mono font-black tracking-[0.3em] text-amber-500/80 uppercase">Military-Grade B2B SaaS</div>
+                                            <h5 className="text-3xl font-extrabold text-white tracking-wide">VERITY</h5>
+                                        </div>
+                                        <div className="ml-auto flex items-center gap-1.5 px-3 py-1 bg-green-950/50 border border-green-500/30 rounded-full">
+                                            <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
+                                            <span className="text-[10px] font-mono font-bold text-green-400 tracking-widest">LIVE</span>
+                                        </div>
+                                    </div>
+
+                                    <p className="text-sm text-[var(--color-text-secondary)] leading-relaxed mb-6 flex-grow">
+                                        Sovereign Operational Intelligence for luxury hospitality auditing and forensics. Military-grade RBAC, AI-powered remediation costing via Gemini Intelligence Liaison, and forensic data integrity across 5,000+ global audit records.
+                                    </p>
+
+                                    {/* Feature Pillars */}
+                                    <div className="grid grid-cols-3 gap-3 mb-8">
+                                        {[
+                                            { icon: Lock, label: "Sovereign RBAC", color: "text-amber-400" },
+                                            { icon: BrainCircuit, label: "AI Liaison", color: "text-blue-400" },
+                                            { icon: BarChart3, label: "Risk Matrix", color: "text-rose-400" },
+                                        ].map(({ icon: Icon, label, color }) => (
+                                            <div key={label} className="flex flex-col items-center gap-2 p-3 bg-white/3 border border-white/5 rounded-xl">
+                                                <Icon className={`w-5 h-5 ${color}`} />
+                                                <span className="text-[9px] font-mono text-center text-[var(--color-text-muted)] tracking-wider">{label}</span>
+                                            </div>
+                                        ))}
+                                    </div>
+
+                                    {/* CTA Buttons */}
+                                    <div className="flex flex-wrap gap-3 mt-auto">
+                                        <span className="inline-flex items-center gap-2 px-6 py-3 bg-amber-500 text-black font-bold text-sm rounded-xl hover:bg-amber-400 hover:scale-105 shadow-[0_0_20px_rgba(245,158,11,0.3)] transition-all">
+                                            Access System <ExternalLink className="w-4 h-4" />
+                                        </span>
+                                        <span
+                                            onClick={(e) => { e.preventDefault(); window.open("https://github.com/EisenDev/Verity.git", "_blank"); }}
+                                            className="inline-flex items-center gap-2 px-6 py-3 bg-transparent border border-white/10 text-[var(--color-text-secondary)] font-bold text-sm rounded-xl hover:border-white/30 hover:text-white transition-all"
+                                        >
+                                            <Github className="w-4 h-4" /> Repository
+                                        </span>
+                                    </div>
+                                </div>
+
+                                {/* Right: Tech Stack Visualizer */}
+                                <div className="bg-[#0a0c12] border border-white/5 rounded-2xl p-6 flex flex-col">
+                                    {/* Terminal Header */}
+                                    <div className="flex items-center gap-2 mb-5 pb-4 border-b border-white/5">
+                                        <div className="w-2.5 h-2.5 rounded-full bg-red-500/60" />
+                                        <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/60" />
+                                        <div className="w-2.5 h-2.5 rounded-full bg-green-500/60" />
+                                        <span className="ml-3 text-[10px] font-mono text-[var(--color-text-muted)] tracking-widest">verity — language matrix</span>
+                                    </div>
+
+                                    {/* Stacked Bar */}
+                                    <div className="flex rounded-full overflow-hidden h-2.5 mb-6">
+                                        {VERITY_LANG_STACK.map(l => (
+                                            <div key={l.label} style={{ width: `${l.pct}%`, backgroundColor: l.color }} />
+                                        ))}
+                                    </div>
+
+                                    {/* Lang Legend */}
+                                    <div className="grid grid-cols-2 gap-x-6 gap-y-3 mb-6">
+                                        {VERITY_LANG_STACK.map(l => (
+                                            <div key={l.label} className="flex items-center gap-2">
+                                                <div className="w-2.5 h-2.5 rounded-full shrink-0" style={{ backgroundColor: l.color }} />
+                                                <span className="text-xs font-mono text-[var(--color-text-secondary)]">{l.label}</span>
+                                                <span className="text-xs font-mono text-[var(--color-text-muted)] ml-auto">{l.pct}%</span>
+                                            </div>
+                                        ))}
+                                    </div>
+
+                                    {/* Mini stats */}
+                                    <div className="mt-auto grid grid-cols-3 gap-3 pt-4 border-t border-white/5">
+                                        {[
+                                            { label: "Audit Records", value: "5,000+" },
+                                            { label: "Risk Matrix", value: "$704K" },
+                                            { label: "AI Remediation", value: "1,933" },
+                                        ].map(s => (
+                                            <div key={s.label} className="text-center">
+                                                <div className="text-sm font-mono font-bold text-amber-400">{s.value}</div>
+                                                <div className="text-[9px] font-mono text-[var(--color-text-muted)] mt-1">{s.label}</div>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </Link>
                 </motion.div>
 
                 {/* OTHER CARDS */}

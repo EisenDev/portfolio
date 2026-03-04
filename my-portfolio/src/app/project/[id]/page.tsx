@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "next/navigation";
 import Link from "next/link";
-import { ArrowLeft, ExternalLink, ShieldCheck, Eye, TerminalSquare, Activity, Focus, Terminal, Server, Network, Code, ScanFace, Target, Zap, Wind, Laptop, Cloud } from "lucide-react";
+import { ArrowLeft, ExternalLink, ShieldCheck, Eye, TerminalSquare, Activity, Focus, Terminal, Server, Network, Code, ScanFace, Target, Zap, Wind, Laptop, Cloud, Github, Lock, BrainCircuit, BarChart3, Users, BadgeCheck, DollarSign } from "lucide-react";
 import { motion } from "framer-motion";
 
 const PROJECT_DATA: Record<string, any> = {
@@ -82,6 +82,27 @@ const PROJECT_DATA: Record<string, any> = {
             "[warn] Repairing malformed AI payloads (jsonrepair)...",
             "[ ok ] UI Synthesized. Deploying to Vercel Edge..."
         ]
+    },
+    "verity": {
+        id: "verity",
+        title: "VERITY",
+        liveUrl: "https://verityphi.app/dashboard",
+        githubUrl: "https://github.com/EisenDev/Verity.git",
+        icon: ShieldCheck,
+        themeColor: "#f59e0b",
+        themeGlow: "rgba(245,158,11,0.3)",
+        tags: ["Sovereign RBAC", "AI Liaison", "Forensic Intelligence", "B2B SaaS"],
+        overview: "SOVEREIGN OPERATIONAL INTELLIGENCE. A military-grade B2B SaaS platform for luxury hospitality auditing and forensics, delivering state-of-the-art operational risk management and AI-automated remediation costing.",
+        challenge: "Luxury hospitality operations generate thousands of audit findings that require real-time financial risk assessment, strict data access governance, and intelligent remediation cost estimation — all currently done manually.",
+        solution: "VERITY enforces a deep Role-Based Access Control matrix with automatic field-level redaction for Department Leads, while the Gemini-powered Intelligence Liaison (verity.txt-grounded) auto-generates itemized remediation cost lists from raw audit findings.",
+        logs: [
+            "~ $ verity audit --access sovereign --dept all",
+            "[info] Connecting to RBAC Matrix (Admin Protocol)...",
+            "[info] Loading 5,000+ Global Audit Records...",
+            "[warn] Financial Risk Exposure Detected: $704K",
+            "[info] Routing findings to Intelligence Liaison (Gemini)...",
+            "[ ok ] Remediation Cost Matrix Generated. 1,933 Pending."
+        ]
     }
 };
 
@@ -139,6 +160,10 @@ export default function ProjectDetail() {
 
     if (project.id === "zeraynce") {
         return <ZeraynceStudioOverlay project={project} />;
+    }
+
+    if (project.id === "verity") {
+        return <VerityCommandCenter project={project} />;
     }
 
     return <StandardProject project={project} />;
@@ -1131,6 +1156,342 @@ function AtmosphereEngine({ project }: { project: any }) {
                         </div>
                     </div>
                 </motion.section>
+
+            </div>
+        </main>
+    );
+}
+
+// --------------------------------------------------------------------------------------
+// VERITY COMMAND CENTER LAYOUT - MILITARY-GRADE SOVEREIGN SaaS
+// --------------------------------------------------------------------------------------
+function VerityCommandCenter({ project }: { project: any }) {
+    const [renderedLogs, setRenderedLogs] = useState<string[]>([]);
+
+    useEffect(() => {
+        if (!project) return;
+        setRenderedLogs([]);
+        project.logs.forEach((log: string, index: number) => {
+            setTimeout(() => {
+                setRenderedLogs(prev => [...prev, log]);
+            }, (index + 1) * 900);
+        });
+    }, [project]);
+
+    return (
+        <main className="min-h-screen bg-[#040509] pt-24 pb-32 overflow-hidden relative selection:bg-amber-500/20 selection:text-white">
+            {/* Fixed dark base */}
+            <div className="fixed inset-0 bg-[#040509]" />
+
+            {/* Radial gold glow top-right */}
+            <div className="fixed top-0 right-0 w-[700px] h-[700px] bg-amber-500/5 blur-[160px] rounded-full pointer-events-none" />
+            <div className="fixed bottom-0 left-0 w-[500px] h-[500px] bg-amber-900/5 blur-[120px] rounded-full pointer-events-none" />
+
+            {/* Subtle grid lines */}
+            <div className="fixed inset-0 pointer-events-none opacity-[0.03]" style={{
+                backgroundImage: `linear-gradient(rgba(245,158,11,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(245,158,11,0.5) 1px, transparent 1px)`,
+                backgroundSize: "60px 60px"
+            }} />
+
+            <div className="container mx-auto px-6 max-w-[1100px] relative z-10">
+
+                {/* Back Button */}
+                <div className="flex justify-start mb-12">
+                    <Link href="/#playground" className="group flex items-center gap-2 text-xs font-mono tracking-widest text-[#64748b] hover:text-amber-400 transition-colors uppercase">
+                        <ArrowLeft className="w-4 h-4" /> Return to Playground
+                    </Link>
+                </div>
+
+                {/* ============ HEADER ============ */}
+                <header className="mb-20 text-center flex flex-col items-center">
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        className="flex flex-col items-center"
+                    >
+                        {/* Badge */}
+                        <div className="mb-6 px-5 py-2 rounded-full border border-amber-500/30 bg-amber-950/20 text-amber-400 text-[10px] font-mono font-black tracking-[0.4em] flex items-center gap-3 shadow-[0_0_20px_rgba(245,158,11,0.1)] uppercase">
+                            <ShieldCheck className="w-4 h-4" />
+                            Military-Grade B2B SaaS
+                        </div>
+
+                        {/* Title */}
+                        <h1 className="text-7xl md:text-9xl font-black tracking-widest uppercase mb-3 relative text-white">
+                            VERITY
+                            <span className="absolute -right-14 top-2 text-[11px] font-mono text-amber-500 border border-amber-500/50 px-2 py-1 bg-black shadow-[0_0_15px_rgba(245,158,11,0.3)] tracking-widest">
+                                v2.0
+                            </span>
+                        </h1>
+
+                        <p className="text-base md:text-lg font-light text-slate-400 max-w-2xl leading-relaxed mt-4 italic">
+                            Sovereign Operational Intelligence
+                        </p>
+
+                        {/* Stats Bar */}
+                        <div className="flex flex-wrap justify-center gap-8 mt-10 mb-10">
+                            {[
+                                { value: "5,000+", label: "Audit Records" },
+                                { value: "$704K", label: "Financial Risk" },
+                                { value: "1,933", label: "Pending Remediation" },
+                                { value: "3.0/5", label: "Quality Score" },
+                            ].map(s => (
+                                <div key={s.label} className="text-center">
+                                    <div className="text-2xl md:text-3xl font-black text-amber-400 font-mono">{s.value}</div>
+                                    <div className="text-[10px] font-mono text-slate-500 tracking-widest uppercase mt-1">{s.label}</div>
+                                </div>
+                            ))}
+                        </div>
+
+                        {/* CTA Buttons */}
+                        <div className="flex flex-wrap justify-center gap-4">
+                            <a
+                                href={project.liveUrl}
+                                target="_blank"
+                                rel="noreferrer"
+                                className="flex items-center gap-3 px-8 py-4 bg-amber-500 text-black rounded-full font-black text-sm tracking-[0.15em] hover:scale-105 hover:bg-amber-400 transition-all shadow-[0_0_30px_rgba(245,158,11,0.4)]"
+                            >
+                                ACCESS LIVE SYSTEM <ExternalLink className="w-4 h-4" />
+                            </a>
+                            <a
+                                href={project.githubUrl}
+                                target="_blank"
+                                rel="noreferrer"
+                                className="flex items-center gap-3 px-8 py-4 bg-transparent border border-white/15 text-slate-300 rounded-full font-bold text-sm tracking-widest hover:border-amber-500/50 hover:text-amber-400 transition-all"
+                            >
+                                <Github className="w-5 h-5" /> VIEW REPOSITORY
+                            </a>
+                        </div>
+                    </motion.div>
+                </header>
+
+                {/* ============ ARCHITECTURE PILLARS ============ */}
+                <motion.section
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.2 }}
+                    className="mb-12"
+                >
+                    <div className="text-center mb-10">
+                        <span className="text-[10px] font-mono text-amber-500 tracking-[0.5em] uppercase">Core Architectural Pillars</span>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        {/* Pillar 1: Sovereign Governance */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.3 }}
+                            className="bg-amber-950/10 border border-amber-500/20 rounded-2xl p-7 hover:border-amber-500/40 hover:bg-amber-950/20 transition-all group"
+                        >
+                            <div className="w-12 h-12 bg-amber-500/10 border border-amber-500/30 rounded-xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+                                <Lock className="w-6 h-6 text-amber-400" />
+                            </div>
+                            <h3 className="text-sm font-mono font-black text-amber-400 tracking-widest uppercase mb-3">I. Sovereign Governance</h3>
+                            <p className="text-slate-400 text-sm leading-relaxed mb-5">
+                                Deep data sovereignty with a strictly enforced RBAC matrix. Sensitive financial fields are automatically redacted for Department Leads, while Admins maintain full global visibility.
+                            </p>
+                            <div className="space-y-2">
+                                {[
+                                    { role: "Admin", desc: "Full visibility & global audit access", color: "text-amber-400 border-amber-500/30" },
+                                    { role: "Dept. Lead", desc: "5K+ records — costs redacted", color: "text-slate-300 border-slate-700" },
+                                ].map(r => (
+                                    <div key={r.role} className={`flex items-center gap-3 px-3 py-2 rounded-lg border ${r.color} bg-black/30`}>
+                                        <Users className="w-3.5 h-3.5 shrink-0" />
+                                        <span className="text-xs font-mono font-bold">{r.role}</span>
+                                        <span className="text-[10px] text-slate-500 ml-auto">{r.desc}</span>
+                                    </div>
+                                ))}
+                            </div>
+                        </motion.div>
+
+                        {/* Pillar 2: Forensic Intelligence */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.4 }}
+                            className="bg-blue-950/10 border border-blue-500/20 rounded-2xl p-7 hover:border-blue-500/40 transition-all group"
+                        >
+                            <div className="w-12 h-12 bg-blue-500/10 border border-blue-500/30 rounded-xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+                                <BrainCircuit className="w-6 h-6 text-blue-400" />
+                            </div>
+                            <h3 className="text-sm font-mono font-black text-blue-400 tracking-widest uppercase mb-3">II. Forensic Intelligence</h3>
+                            <p className="text-slate-400 text-sm leading-relaxed mb-5">
+                                The Intelligence Liaison is a context-aware AI matrix grounded in custom organizational documentation (<code className="text-blue-300 text-[11px] bg-blue-950/40 px-1 rounded">verity.txt</code>). It provides real-time guidance within authorized operational bounds.
+                            </p>
+                            <div className="p-3 bg-black/50 border border-blue-500/15 rounded-xl font-mono text-[10px] text-blue-300/80 leading-relaxed">
+                                <span className="text-slate-600">&gt; </span>Query routed to Gemini Intelligence Liaison...<br />
+                                <span className="text-slate-600">&gt; </span>Context: verity.txt [AUTHORIZED]<br />
+                                <span className="text-emerald-400">&gt; </span>Response generated within operational bounds.
+                            </div>
+                        </motion.div>
+
+                        {/* Pillar 3: Remediation Estimator */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.5 }}
+                            className="bg-rose-950/10 border border-rose-500/20 rounded-2xl p-7 hover:border-rose-500/40 transition-all group"
+                        >
+                            <div className="w-12 h-12 bg-rose-500/10 border border-rose-500/30 rounded-xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+                                <DollarSign className="w-6 h-6 text-rose-400" />
+                            </div>
+                            <h3 className="text-sm font-mono font-black text-rose-400 tracking-widest uppercase mb-3">III. Remediation Estimator</h3>
+                            <p className="text-slate-400 text-sm leading-relaxed mb-5">
+                                The AI Cost Matrix automatically generates itemized remediation lists from raw audit findings, reducing manual overhead for department managers significantly.
+                            </p>
+                            <div className="space-y-2">
+                                {[
+                                    { item: "Broken Bed Frame", cost: "$500.00" },
+                                    { item: "Flickering Fixtures", cost: "$1,055.00" },
+                                    { item: "F&B Equipment", cost: "$1,650.00" },
+                                ].map(r => (
+                                    <div key={r.item} className="flex items-center justify-between px-3 py-2 rounded-lg border border-rose-500/15 bg-black/30">
+                                        <span className="text-xs font-mono text-slate-400">{r.item}</span>
+                                        <span className="text-xs font-mono font-bold text-rose-300">{r.cost}</span>
+                                    </div>
+                                ))}
+                            </div>
+                        </motion.div>
+                    </div>
+                </motion.section>
+
+                {/* ============ OVERVIEW + TERMINAL ============ */}
+                <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.4 }}
+                    className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-12"
+                >
+                    {/* Left: Challenge & Solution */}
+                    <div className="lg:col-span-7 space-y-6">
+                        <div className="bg-black/50 border border-red-900/30 p-8 rounded-2xl relative overflow-hidden">
+                            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(239,68,68,0.04),transparent)]" />
+                            <h3 className="text-[11px] font-mono font-black text-red-500 tracking-[0.4em] uppercase mb-4 flex items-center gap-2 relative z-10">
+                                <span className="w-2 h-2 rounded-full bg-red-500" /> The Operational Gap
+                            </h3>
+                            <p className="text-slate-300 leading-relaxed text-base font-light relative z-10">{project.challenge}</p>
+                        </div>
+                        <div className="bg-black/50 border border-amber-500/20 p-8 rounded-2xl relative overflow-hidden">
+                            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(245,158,11,0.06),transparent)]" />
+                            <h3 className="text-[11px] font-mono font-black text-amber-400 tracking-[0.4em] uppercase mb-4 flex items-center gap-2 relative z-10">
+                                <span className="w-2 h-2 rounded-full bg-amber-400" /> The Sovereign Solution
+                            </h3>
+                            <p className="text-slate-300 leading-relaxed text-base font-light relative z-10">{project.solution}</p>
+                        </div>
+                    </div>
+
+                    {/* Right: Terminal */}
+                    <div className="lg:col-span-5">
+                        <div className="bg-[#060709] border border-amber-500/15 rounded-2xl overflow-hidden h-full flex flex-col">
+                            <div className="flex items-center justify-between px-6 py-4 border-b border-amber-500/10 bg-black/40">
+                                <div className="flex items-center gap-3">
+                                    <Activity className="w-4 h-4 text-amber-500" />
+                                    <span className="font-mono text-[10px] font-black tracking-widest text-slate-500 uppercase">Sovereign Audit Engine</span>
+                                </div>
+                                <div className="flex gap-1.5">
+                                    <div className="w-2.5 h-2.5 rounded-full bg-slate-800" />
+                                    <div className="w-2.5 h-2.5 rounded-full bg-slate-800" />
+                                    <div className="w-2.5 h-2.5 rounded-full bg-amber-500 animate-pulse" />
+                                </div>
+                            </div>
+                            <div className="p-8 font-mono text-xs space-y-4 overflow-y-auto flex-grow">
+                                {renderedLogs.map((log, i) => {
+                                    let colorClass = "text-slate-600";
+                                    if (log.includes("[info]")) colorClass = "text-amber-400";
+                                    if (log.includes("[warn]")) colorClass = "text-red-400";
+                                    if (log.includes("[ ok ]")) colorClass = "text-emerald-400 font-bold";
+                                    return (
+                                        <motion.div key={i} initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} className={`${colorClass} flex gap-4`}>
+                                            <span className="text-slate-800 select-none shrink-0">{i + 1 > 9 ? i + 1 : `0${i + 1}`}</span>
+                                            <span className="break-all">{log}</span>
+                                        </motion.div>
+                                    );
+                                })}
+                                {renderedLogs.length < project.logs.length && (
+                                    <div className="flex gap-4 animate-pulse">
+                                        <span className="text-slate-800 select-none shrink-0">{`0${renderedLogs.length + 1}`}</span>
+                                        <span className="text-amber-600">_</span>
+                                    </div>
+                                )}
+                            </div>
+                        </div>
+                    </div>
+                </motion.div>
+
+                {/* ============ TECH STACK ============ */}
+                <motion.section
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="bg-gradient-to-br from-[#060810] to-[#040509] border border-amber-500/15 rounded-3xl p-10 md:p-14 text-center relative overflow-hidden mb-12"
+                >
+                    <div className="absolute inset-0 pointer-events-none opacity-[0.04]" style={{
+                        backgroundImage: `linear-gradient(rgba(245,158,11,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(245,158,11,0.5) 1px, transparent 1px)`,
+                        backgroundSize: "30px 30px"
+                    }} />
+
+                    <span className="text-[10px] font-mono text-amber-500 tracking-[0.5em] uppercase mb-4 block">Language Matrix</span>
+                    <h3 className="text-3xl md:text-5xl font-black text-white mb-10 tracking-tight">Built on Vue. Powered by TypeScript.</h3>
+
+                    {/* Stacked language bar */}
+                    <div className="max-w-3xl mx-auto">
+                        <div className="flex rounded-full overflow-hidden h-4 mb-8 shadow-[0_0_20px_rgba(245,158,11,0.15)]">
+                            {[
+                                { label: "Vue", pct: 76.9, color: "#41b883" },
+                                { label: "TypeScript", pct: 19.9, color: "#3178c6" },
+                                { label: "Shell", pct: 1.7, color: "#89e051" },
+                                { label: "CSS", pct: 0.5, color: "#563d7c" },
+                                { label: "Dockerfile", pct: 0.4, color: "#384d54" },
+                                { label: "JS", pct: 0.3, color: "#f1e05a" },
+                                { label: "HTML", pct: 0.3, color: "#e34c26" },
+                            ].map(l => (
+                                <div key={l.label} title={`${l.label} ${l.pct}%`} style={{ width: `${l.pct}%`, backgroundColor: l.color }} />
+                            ))}
+                        </div>
+                        <div className="flex flex-wrap justify-center gap-x-8 gap-y-3">
+                            {[
+                                { label: "Vue", pct: 76.9, color: "#41b883" },
+                                { label: "TypeScript", pct: 19.9, color: "#3178c6" },
+                                { label: "Shell", pct: 1.7, color: "#89e051" },
+                                { label: "CSS", pct: 0.5, color: "#563d7c" },
+                                { label: "Dockerfile", pct: 0.4, color: "#384d54" },
+                                { label: "JavaScript", pct: 0.3, color: "#f1e05a" },
+                                { label: "HTML", pct: 0.3, color: "#e34c26" },
+                            ].map(l => (
+                                <div key={l.label} className="flex items-center gap-2">
+                                    <div className="w-3 h-3 rounded-full" style={{ backgroundColor: l.color }} />
+                                    <span className="text-sm font-mono text-slate-300">{l.label}</span>
+                                    <span className="text-sm font-mono text-slate-500">{l.pct}%</span>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </motion.section>
+
+                {/* ============ FOOTER CTA ============ */}
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4"
+                >
+                    <a
+                        href={project.liveUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="flex items-center gap-3 px-10 py-5 bg-amber-500 text-black rounded-full font-black text-sm tracking-[0.2em] hover:scale-105 hover:bg-amber-400 transition-all shadow-[0_0_40px_rgba(245,158,11,0.35)]"
+                    >
+                        ACCESS LIVE SYSTEM <ExternalLink className="w-5 h-5" />
+                    </a>
+                    <a
+                        href={project.githubUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="flex items-center gap-3 px-10 py-5 border border-white/15 text-slate-300 rounded-full font-bold text-sm tracking-widest hover:border-amber-500/50 hover:text-amber-400 transition-all"
+                    >
+                        <Github className="w-5 h-5" /> GITHUB REPOSITORY
+                    </a>
+                </motion.div>
 
             </div>
         </main>
