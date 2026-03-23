@@ -3,7 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ExternalLink, Figma, Code, Box, Target, ShieldCheck, Database, Server, Globe, Cpu, ArrowRight, Github, Lock, BrainCircuit, BarChart3 } from "lucide-react";
+import { ExternalLink, Figma, Code, Box, Target, ShieldCheck, Database, Server, Globe, Cpu, ArrowRight, Github, Lock, BrainCircuit, BarChart3, TerminalSquare } from "lucide-react";
 import { GitHubZenUtility, IPGeolocationUtility, HardwareGeolocationUtility, SpaceStationUtility } from "./LiveUtilities";
 
 const PROJECTS = [
@@ -20,13 +20,6 @@ const PROJECTS = [
         desc: "Stealthy desktop overlay utilizing Generative AI screen analysis.",
         tech: ["Python", "Gemini API", "OpenCV"],
         href: "/project/omni-hand"
-    },
-    {
-        id: "zeraynce",
-        title: "Zeraynce Studio",
-        desc: "Freelancer and Studio connection platform with booking systems.",
-        tech: ["Laravel", "Supabase", "R2", "Blade", "tailwind"],
-        href: "/project/zeraynce"
     }
 ];
 
@@ -58,6 +51,59 @@ export default function Playground() {
                         Prototypes, production deployments, and bleeding-edge system integrations.
                     </p>
                 </div>
+
+                {/* THE INFRASTRUCTURE: ZERAYNCE */}
+                <h4 className="text-xl font-bold text-[var(--color-text-primary)] mb-8 border-l-4 border-white pl-4 uppercase tracking-widest">The Core Infrastructure</h4>
+
+                <motion.div
+                    initial={{ opacity: 0, scale: 0.98 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    className="bg-black border border-gray-800 p-8 lg:p-12 xl:p-16 rounded-3xl shadow-[0_0_50px_rgba(255,255,255,0.05)] mb-16 relative overflow-hidden group"
+                >
+                    {/* Decorative Background Glow */}
+                    <div className="absolute -left-20 -top-20 w-80 h-80 bg-white/5 blur-[100px] rounded-full pointer-events-none" />
+                    
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 relative z-10 items-center">
+                        <div>
+                            <div className="flex items-center gap-3 mb-6">
+                                <TerminalSquare className="w-8 h-8 text-white" />
+                                <h3 className="text-3xl font-black text-white tracking-widest uppercase">ZERAYNCE</h3>
+                            </div>
+                            <p className="text-lg text-gray-400 font-light leading-relaxed mb-6">
+                                Industrial-grade Creative Infrastructure Ecosystem designed to bridge the gap between high-level talent and business-critical operations. A node-based OS for the modern creative economy.
+                            </p>
+                            <div className="flex flex-wrap gap-2 mb-8">
+                                {["Docker", "CI/CD", "Laravel", "Supabase", "Azure", "Secure Node Protocol"].map(tag => (
+                                    <span key={tag} className="px-3 py-1 bg-gray-900 border border-gray-700 text-gray-400 rounded-sm text-[10px] font-mono font-bold tracking-widest uppercase">
+                                        {tag}
+                                    </span>
+                                ))}
+                            </div>
+                            <Link href="/project/zeraynce" className="inline-flex items-center gap-3 px-8 py-4 bg-white text-black font-black text-sm tracking-widest uppercase hover:bg-gray-200 hover:scale-105 transition-all shadow-[0_0_25px_rgba(255,255,255,0.1)]">
+                                ACCESS INFRASTRUCTURE <ExternalLink className="w-5 h-5" />
+                            </Link>
+                        </div>
+
+                        <div className="bg-[#050505] border border-gray-800 p-8 rounded-sm shadow-2xl flex flex-col gap-6 font-mono text-xs text-gray-500 relative overflow-hidden group">
+                           <div className="flex items-center justify-between border-b border-gray-900 pb-4">
+                               <div className="flex gap-1.5">
+                                   <div className="w-2 h-2 rounded-full bg-gray-800" />
+                                   <div className="w-2 h-2 rounded-full bg-gray-800" />
+                                   <div className="w-2 h-2 rounded-full bg-white animate-pulse" />
+                               </div>
+                               <span className="text-[10px] tracking-widest font-black uppercase">zeraynce_core_v1</span>
+                           </div>
+                           <div className="space-y-2">
+                               <p className="text-white">&gt; initializing secure_node_protocol...</p>
+                               <p className="text-gray-600">&gt; creative_marketplace: [online]</p>
+                               <p className="text-gray-600">&gt; financial_automation: [active]</p>
+                               <p className="text-gray-600">&gt; management_hq: [synced]</p>
+                               <p className="text-white font-bold mt-4">&gt; STATUS: INFRASTRUCTURE_STABLE</p>
+                           </div>
+                        </div>
+                    </div>
+                </motion.div>
 
                 {/* THE FLAGSHIP: LUMECORE */}
                 <h4 className="text-xl font-bold text-[var(--color-text-primary)] mb-8 border-l-4 border-[var(--color-brand-500)] pl-4">The Flagship Project</h4>

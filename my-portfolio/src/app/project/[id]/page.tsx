@@ -47,21 +47,21 @@ const PROJECT_DATA: Record<string, any> = {
     },
     "zeraynce": {
         id: "zeraynce",
-        title: "Zeraynce Studio",
-        liveUrl: "https://zeraynce.example.com",
+        title: "ZERAYNCE",
+        liveUrl: "https://zeraynce.com",
         icon: TerminalSquare,
-        themeColor: "#f97316",
-        themeGlow: "rgba(249,115,22,0.3)",
-        tags: ["Laravel 11", "Supabase", "React UI", "TailwindCSS"],
-        overview: "A fully developed marketplace connecting top-tier freelancers with independent studios. Features built-in secure booking systems, automated settlement flows, and dual-party verification states.",
-        challenge: "Managing freelancer invoices, tracking milestone deliverables, and preventing scope creep during active studio engagements is historically frictionless and chaotic.",
-        solution: "A bespoke Laravel application acting as a unified escrow service, keeping projects aligned with real-time UI/UX scaffolding generated via Prompt-Driven Development.",
+        themeColor: "#ffffff",
+        themeGlow: "rgba(255,255,255,0.1)",
+        tags: ["Infrastructure", "Creative Ecosystem", "Node Protocol", "B2B Ops"],
+        overview: "INDUSTRIAL-GRADE CREATIVE INFRASTRUCTURE. Zeraynce is an ecosystem designed to bridge the gap between high-level talent (Creatives) and business-critical operations through a secure node-based architecture.",
+        challenge: "The creative economy is fragmented. Talent discovery is superficial, financial transactions are high-risk, and project management tools are detached from the actual creative output.",
+        solution: "A unified Creative Infrastructure Ecosystem. Zeraynce combines a discovery engine, a built-in financial layer (Secure Node Protocol), and an elite management dashboard into a single, high-performance node for the modern economy.",
         logs: [
-            "~ $ php artisan zeraynce:settle-escrow",
-            "[info] Verifying dual-party milestones...",
-            "[warn] Studio approval pending on Milestone 03.",
-            "[info] Routing payload to Supabase Edge Functions...",
-            "[ ok ] Escrow Released. Transaction logged to Ledger."
+            "~ $ zeraynce node --initialize --id creative-01",
+            "[info] Establishing Secure Node Protocol (Level 5)...",
+            "[info] Synchronizing R&D Modules: Marketplace, Financial, Dashboard...",
+            "[warn] Routing Financial Layer through PayCreativeModal...",
+            "[ ok ] Infrastructure Active. Node Link Established."
         ]
     },
     "iris-ts": {
@@ -770,135 +770,156 @@ function ZeraynceStudioOverlay({ project }: { project: any }) {
     const Icon = project.icon;
 
     return (
-        <main className="min-h-screen bg-[var(--color-bg-primary)] pt-24 pb-32 overflow-hidden relative selection:bg-[#a855f7]/30 selection:text-white">
-            <div className="absolute top-1/4 right-0 w-[500px] h-[500px] bg-[#a855f7]/5 rounded-full blur-[120px] pointer-events-none" />
+        <main className="min-h-screen bg-[#050505] pt-24 pb-32 overflow-hidden relative selection:bg-white/10 selection:text-white">
+            {/* Minimalist Industrial Background */}
+            <div className="fixed inset-0 bg-[#050505]" />
+            <div className="fixed inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-[0.02] pointer-events-none" />
+            
+            {/* Subtle Vertical Lines */}
+            <div className="fixed inset-0 pointer-events-none opacity-[0.03]" style={{
+                backgroundImage: `linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)`,
+                backgroundSize: "100px 100px"
+            }} />
 
-            <div className="container mx-auto px-6 lg:px-12 max-w-5xl relative z-10">
+            <div className="container mx-auto px-6 lg:px-12 max-w-6xl relative z-10">
 
-                <Link href="/#playground" className="group flex items-center gap-3 text-sm font-mono font-bold tracking-widest text-[var(--color-text-secondary)] hover:text-white transition-colors mb-16 max-w-max">
-                    <div className="p-2 bg-[var(--color-bg-secondary)] border border-[var(--color-border-subtle)] rounded group-hover:border-[#a855f7]/50 transition-colors">
+                <Link href="/#playground" className="group flex items-center gap-3 text-xs font-mono font-bold tracking-[0.3em] text-gray-500 hover:text-white transition-colors mb-16 max-w-max uppercase">
+                    <div className="p-2 border border-gray-800 rounded group-hover:border-gray-400 transition-colors">
                         <ArrowLeft className="w-4 h-4" />
                     </div>
-                    CD .. / PLAYGROUND
+                    NODE_EXIT / PLAYGROUND
                 </Link>
 
-                <header className="mb-20">
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        className="flex flex-col md:flex-row gap-8 items-start md:items-center"
-                    >
-                        <div className="w-24 h-24 rounded-2xl bg-[var(--color-bg-secondary)] border border-[var(--color-border-subtle)] flex items-center justify-center shrink-0">
-                            <Icon className="w-10 h-10 text-[#a855f7]" />
-                        </div>
-
-                        <div>
-                            <div className="mb-4 flex items-center gap-3">
-                                <div className="px-3 py-1.5 rounded-full border border-[var(--color-border-subtle)] bg-[var(--color-bg-secondary)] text-[var(--color-text-secondary)] text-xs font-mono tracking-widest flex items-center gap-2">
-                                    <Target className="w-3 h-3 text-[#a855f7]" />
-                                    LIVE PROJECT
-                                </div>
-                            </div>
-                            <h1 className="text-5xl md:text-7xl font-extrabold text-[#e2e8f0] tracking-tight mb-4">
-                                {project.title}
-                            </h1>
-                            <div className="flex flex-wrap gap-2">
-                                {project.tags.map((tag: string) => (
-                                    <span
-                                        key={tag}
-                                        className="px-2 py-1 bg-[var(--color-bg-secondary)] text-[var(--color-text-muted)] border border-[var(--color-border-subtle)] rounded text-xs font-mono font-bold"
-                                    >
-                                        {tag}
-                                    </span>
-                                ))}
-                            </div>
-                        </div>
-                    </motion.div>
-
+                <header className="mb-24 flex flex-col md:flex-row gap-12 items-start md:items-end border-b border-gray-800 pb-16">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.2 }}
-                        className="flex flex-wrap items-center gap-4 mt-10"
+                        className="w-32 h-32 rounded-sm bg-black border border-gray-700 flex items-center justify-center shrink-0 relative group"
                     >
-                        {/* OFFLINE / DISABLED BUTTON */}
-                        <div
-                            className="flex items-center gap-3 px-8 py-4 bg-[var(--color-bg-secondary)] text-red-500 rounded-xl font-bold text-sm border border-[var(--color-border-subtle)] cursor-not-allowed uppercase tracking-widest shadow-xl"
-                        >
-                            <span className="w-2.5 h-2.5 rounded-full bg-red-500 shrink-0 shadow-[0_0_8px_rgba(239,68,68,0.8)] animate-pulse" />
-                            <span>SYSTEM OFFLINE : REFITTING IN PROGRESS</span>
-                        </div>
+                        <div className="absolute inset-0 border border-white/10 group-hover:border-white/30 transition-colors" />
+                        <Icon className="w-16 h-16 text-white" />
                     </motion.div>
+
+                    <div className="flex-grow">
+                        <motion.div 
+                            initial={{ opacity: 0, x: -20 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ delay: 0.1 }}
+                            className="mb-4 flex items-center gap-4"
+                        >
+                            <span className="px-3 py-1 bg-white text-black text-[10px] font-mono font-black tracking-widest uppercase">
+                                ARCHITECTURE_V1
+                            </span>
+                            <span className="text-gray-500 text-[10px] font-mono tracking-widest uppercase">
+                                SECURE_NODE_PROTOCOL
+                            </span>
+                        </motion.div>
+                        <h1 className="text-6xl md:text-9xl font-black text-white tracking-widest mb-6">
+                            ZERAYNCE.
+                        </h1>
+                        <p className="text-xl md:text-3xl font-light text-gray-400 tracking-tight max-w-2xl border-l border-gray-700 pl-8">
+                            Industrial-grade Creative Infrastructure Ecosystem.
+                        </p>
+                    </div>
                 </header>
 
-                <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }} className="space-y-12">
-                    <section className="bg-[var(--color-bg-secondary)] border border-[var(--color-border-subtle)] p-8 md:p-12 rounded-2xl shadow-xl relative overflow-hidden">
-                        <h2 className="text-xl font-bold text-[#e2e8f0] mb-6 flex items-center gap-3">
-                            <Focus className="w-5 h-5 text-[#a855f7]" /> What is Zeraynce Studio?
-                        </h2>
-
-                        <div className="space-y-6">
-                            <p className="text-lg text-[var(--color-text-secondary)] leading-relaxed border-l-2 border-[#a855f7] pl-6">
-                                <span className="text-white font-bold">Zeraynce Studio</span> is a definitive, high-performance marketplace architecture built entirely on Laravel and React. It serves as a seamless nexus between top-tier creative talents and independent agencies.
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-24">
+                    {/* Key Pillars */}
+                    <div className="lg:col-span-8 space-y-12">
+                        <section>
+                            <h2 className="text-xs font-mono font-black text-white tracking-[0.5em] uppercase mb-10 opacity-50">
+                                01 / CORE_IDENTITY
+                            </h2>
+                            <p className="text-3xl md:text-4xl font-light text-white leading-tight mb-12">
+                                Bridging the gap between high-level talent and business-critical operations.
                             </p>
+                            
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                {[
+                                    { title: "THE_MARKETPLACE", desc: "High-fidelity discovery engine via Recent Creatives and Creative Card systems.", icon: Users },
+                                    { title: "FINANCIAL_LAYER", desc: "Built-in transaction system (PayCreativeModal) handling legal and billing actions.", icon: DollarSign },
+                                    { title: "MANAGEMENT_HQ", desc: "Elite dashboard to monitor Nodes, track progress via Analytics, and Aesthetic Calendar.", icon: BarChart3 },
+                                    { title: "AI_COMPANION", desc: "Artificial intelligence optimizing workflow and creative search ergonomics.", icon: BrainCircuit },
+                                ].map((pillar, i) => (
+                                    <motion.div 
+                                        key={pillar.title}
+                                        initial={{ opacity: 0, y: 20 }}
+                                        whileInView={{ opacity: 1, y: 0 }}
+                                        viewport={{ once: true }}
+                                        transition={{ delay: i * 0.1 }}
+                                        className="p-8 border border-gray-900 bg-gray-900/10 hover:border-gray-700 transition-colors group"
+                                    >
+                                        <pillar.icon className="w-6 h-6 text-gray-400 group-hover:text-white mb-6 transition-colors" />
+                                        <h3 className="text-sm font-mono font-black text-white mb-3 tracking-widest">{pillar.title}</h3>
+                                        <p className="text-sm text-gray-500 leading-relaxed font-light">{pillar.desc}</p>
+                                    </motion.div>
+                                ))}
+                            </div>
+                        </section>
 
-                            <p className="text-base text-[var(--color-text-secondary)] leading-relaxed pl-6">
-                                We eliminate the chaos of typical freelance coordination by injecting an automated, zero-trust escrow layer into the workflow. Everything from scoping, milestone delivery, and financial settlement happens securely on-chain.
+                        <section className="bg-white p-12 md:p-16">
+                            <h2 className="text-xs font-mono font-black text-black tracking-[0.5em] uppercase mb-8">
+                                02 / STEALTH_WEALTH_AESTHETIC
+                            </h2>
+                            <p className="text-2xl text-black font-light leading-relaxed mb-10">
+                                Defined by "Minimalist Authority." Using deep blacks, neutral grays, and high-contrast whites to reflect its status as industry-grade infrastructure.
                             </p>
-                        </div>
-                    </section>
+                            <div className="flex gap-4">
+                                <div className="w-12 h-12 bg-black border border-gray-300" />
+                                <div className="w-12 h-12 bg-gray-400" />
+                                <div className="w-12 h-12 bg-gray-200" />
+                                <div className="w-12 h-12 bg-white" />
+                            </div>
+                        </section>
+                    </div>
 
-                    <section className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <div className="bg-[var(--color-bg-secondary)] border border-[var(--color-border-subtle)] p-8 rounded-2xl shadow-xl">
-                            <h3 className="text-xl font-bold text-[#e2e8f0] mb-6 flex items-center gap-3">
-                                <ShieldCheck className="w-5 h-5 text-[#a855f7]" /> The Benefits
+                    {/* Meta Info */}
+                    <div className="lg:col-span-4 space-y-8">
+                        <div className="border border-gray-800 p-8">
+                            <h3 className="text-xs font-mono font-black text-white tracking-widest uppercase mb-6 border-b border-gray-800 pb-4">
+                                SYSTEM_STATUS
                             </h3>
-                            <ul className="space-y-4">
-                                <li className="flex items-start gap-4 p-4 rounded-xl bg-[var(--color-bg-primary)] border border-[var(--color-border-subtle)]">
-                                    <div className="w-2 h-2 rounded-full bg-[#a855f7] mt-2 shrink-0" />
-                                    <div>
-                                        <div className="text-[#e2e8f0] font-bold mb-1">Secure Escrow Flow</div>
-                                        <span className="text-sm text-[var(--color-text-secondary)] line-clamp-2">Client funds are vaulted securely and released purely systematically.</span>
-                                    </div>
-                                </li>
-                                <li className="flex items-start gap-4 p-4 rounded-xl bg-[var(--color-bg-primary)] border border-[var(--color-border-subtle)]">
-                                    <div className="w-2 h-2 rounded-full bg-[#a855f7] mt-2 shrink-0" />
-                                    <div>
-                                        <div className="text-[#e2e8f0] font-bold mb-1">Immutable Scope</div>
-                                        <span className="text-sm text-[var(--color-text-secondary)] line-clamp-2">Eradicates "scope creep" with uneditable project agreements.</span>
-                                    </div>
-                                </li>
-                                <li className="flex items-start gap-4 p-4 rounded-xl bg-[var(--color-bg-primary)] border border-[var(--color-border-subtle)]">
-                                    <div className="w-2 h-2 rounded-full bg-[#a855f7] mt-2 shrink-0" />
-                                    <div>
-                                        <div className="text-[#e2e8f0] font-bold mb-1">Real-Time Alerts</div>
-                                        <span className="text-sm text-[var(--color-text-secondary)] line-clamp-2">Instant, centralized websockets to keep all parties perfectly synchronized natively.</span>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div className="bg-[var(--color-bg-secondary)] border border-[var(--color-border-subtle)] p-8 rounded-2xl shadow-xl">
-                            <h3 className="text-xl font-bold text-[#e2e8f0] mb-6 flex items-center gap-3">
-                                <Network className="w-5 h-5 text-[#a855f7]" /> Shaping the Philippines
-                            </h3>
-
-                            <div className="space-y-6">
-                                <p className="text-[var(--color-text-secondary)] leading-relaxed text-base">
-                                    The global creative industry is vast, yet locally in the Philippines, it remains heavily fragmented, continually plagued by non-payment disputes and predatory intermediaries.
-                                </p>
-
-                                <div className="p-5 border-l-2 border-[#a855f7] bg-[var(--color-bg-primary)] text-[var(--color-text-secondary)] italic rounded-r-lg text-sm border-t border-r border-b border-[var(--color-border-subtle)]">
-                                    "Zeraynce establishes an authoritative infrastructure, promoting world-class local talent into a globally compliant standard."
+                            <div className="space-y-4">
+                                <div className="flex justify-between items-center text-xs font-mono">
+                                    <span className="text-gray-500">OPERATIONAL_MODE</span>
+                                    <span className="text-white">STEALTH</span>
                                 </div>
-
-                                <p className="text-[var(--color-text-secondary)] leading-relaxed text-base">
-                                    It empowers Filipino developers, artists, and designers to command true sovereign control over their rates, while simultaneously offering international studios a perfectly streamlined, risk-free hiring portal.
-                                </p>
+                                <div className="flex justify-between items-center text-xs font-mono">
+                                    <span className="text-gray-500">SECURITY_LEVEL</span>
+                                    <span className="text-white">NODE_PROTOCOL_5</span>
+                                </div>
+                                <div className="flex justify-between items-center text-xs font-mono">
+                                    <span className="text-gray-500">UPTIME</span>
+                                    <span className="text-white">99.99%</span>
+                                </div>
                             </div>
                         </div>
-                    </section>
-                </motion.div>
+
+                        <div className="bg-gray-950 border border-gray-800 p-8 font-mono text-[10px] space-y-4 text-gray-400 leading-relaxed">
+                            <div className="flex items-center gap-2 text-white border-b border-gray-800 pb-4 mb-4">
+                                <TerminalSquare className="w-4 h-4 text-white" />
+                                <span>INFRASTRUCTURE_INIT.SH</span>
+                            </div>
+                            <p>&gt; initializing zeraynce core...</p>
+                            <p>&gt; connecting to creative nodes...</p>
+                            <p>&gt; establishing financial layer...</p>
+                            <p>&gt; secure_protocol: ACTIVE</p>
+                            <p>&gt; aesthetic_logic: MINIMALIST_AUTHORITY</p>
+                        </div>
+                        
+                        <div className="p-8 border-l-4 border-white bg-gray-900/20">
+                            <p className="text-sm italic text-gray-400 font-light leading-relaxed">
+                                "Zeraynce is the operating system for the modern creative economy—combining hiring, project management, and financial automation into a single, high-performance node."
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="flex justify-center border-t border-gray-800 pt-16">
+                    <a href={project.liveUrl} className="px-12 py-5 bg-white text-black font-black text-sm tracking-[0.3em] hover:bg-gray-200 transition-colors uppercase shadow-[0_0_50px_rgba(255,255,255,0.1)]">
+                        ACCESS_NODE
+                    </a>
+                </div>
             </div>
         </main>
     );
