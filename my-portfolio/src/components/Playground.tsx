@@ -80,9 +80,22 @@ export default function Playground() {
                                     </span>
                                 ))}
                             </div>
-                            <Link href="/project/zeraynce" className="inline-flex items-center gap-3 px-8 py-4 bg-white text-black font-black text-sm tracking-widest uppercase hover:bg-gray-200 hover:scale-105 transition-all shadow-[0_0_25px_rgba(255,255,255,0.1)]">
-                                ACCESS INFRASTRUCTURE <ExternalLink className="w-5 h-5" />
-                            </Link>
+                            <div className="flex flex-wrap gap-4 mt-auto">
+                                <a 
+                                    href="https://zeraynce.com/" 
+                                    target="_blank" 
+                                    rel="noopener noreferrer" 
+                                    className="inline-flex items-center gap-3 px-8 py-4 bg-white text-black font-black text-sm tracking-widest uppercase hover:bg-gray-200 hover:scale-105 transition-all shadow-[0_0_25px_rgba(255,255,255,0.1)]"
+                                >
+                                    ACCESS INFRASTRUCTURE <ExternalLink className="w-5 h-5" />
+                                </a>
+                                <Link 
+                                    href="/project/zeraynce" 
+                                    className="inline-flex items-center gap-3 px-6 py-4 bg-transparent border border-gray-700 text-gray-400 font-bold text-sm tracking-widest uppercase hover:text-white hover:border-white transition-all"
+                                >
+                                    VIEW_SPECS
+                                </Link>
+                            </div>
                         </div>
 
                         <div className="bg-[#050505] border border-gray-800 p-8 rounded-sm shadow-2xl flex flex-col gap-6 font-mono text-xs text-gray-500 relative overflow-hidden group">

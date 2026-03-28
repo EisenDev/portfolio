@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, JetBrains_Mono } from "next/font/google";
+import { Inter, JetBrains_Mono, Poppins } from "next/font/google";
 import "./globals.css";
 import FloatingPreferences from "@/components/FloatingPreferences";
 
@@ -11,6 +11,12 @@ const inter = Inter({
 const jetbrainsMono = JetBrains_Mono({
     variable: "--font-mono",
     subsets: ["latin"],
+});
+
+const poppins = Poppins({
+    variable: "--font-poppins",
+    subsets: ["latin"],
+    weight: ["300", "400", "500", "600", "700", "800", "900"],
 });
 
 export const metadata: Metadata = {
@@ -29,7 +35,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en" className="dark scroll-smooth">
-            <body className={`${inter.variable} ${jetbrainsMono.variable} font-sans antialiased selection:bg-brand-500 selection:text-white`}>
+            <body className={`${inter.variable} ${jetbrainsMono.variable} ${poppins.variable} font-sans antialiased selection:bg-brand-500 selection:text-white`}>
                 {children}
                 <FloatingPreferences />
             </body>

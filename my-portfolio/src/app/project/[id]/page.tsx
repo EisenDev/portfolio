@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "next/navigation";
 import Link from "next/link";
-import { ArrowLeft, ExternalLink, ShieldCheck, Eye, TerminalSquare, Activity, Focus, Terminal, Server, Network, Code, ScanFace, Target, Zap, Wind, Laptop, Cloud, Github, Lock, BrainCircuit, BarChart3, Users, BadgeCheck, DollarSign } from "lucide-react";
+import { ArrowLeft, ExternalLink, ShieldCheck, Eye, TerminalSquare, Activity, Focus, Terminal, Server, Network, Code, ScanFace, Target, Zap, Wind, Laptop, Cloud, Github, Lock, BrainCircuit, BarChart3, Users, BadgeCheck, DollarSign, Globe } from "lucide-react";
 import { motion } from "framer-motion";
 
 const PROJECT_DATA: Record<string, any> = {
@@ -764,160 +764,180 @@ function OmniHandOverlay({ project }: { project: any }) {
 }
 
 // --------------------------------------------------------------------------------------
-// ZERAYNCE STUDIO LAYOUT - EMERALD THEME & PH INDUSTRY IMPACT
+// ZERAYNCE STUDIO LAYOUT - LIGHT THEME & MARKETPLACE AESTHETIC (ZERAYNCE.COM MATCH)
 // --------------------------------------------------------------------------------------
 function ZeraynceStudioOverlay({ project }: { project: any }) {
     const Icon = project.icon;
 
     return (
-        <main className="min-h-screen bg-[#050505] pt-24 pb-32 overflow-hidden relative selection:bg-white/10 selection:text-white">
-            {/* Minimalist Industrial Background */}
-            <div className="fixed inset-0 bg-[#050505]" />
-            <div className="fixed inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-[0.02] pointer-events-none" />
+        <main className="min-h-screen bg-[#f8fafc] pt-24 pb-32 overflow-hidden relative selection:bg-blue-600 selection:text-white font-poppins">
+            {/* Soft Background Elements */}
+            <div className="fixed inset-0 bg-[#f8fafc]" />
+            <div className="fixed inset-0 bg-[radial-gradient(circle_at_top_right,rgba(59,130,246,0.05),transparent_50%)] pointer-events-none" />
+            <div className="fixed inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(16,185,129,0.05),transparent_50%)] pointer-events-none" />
             
-            {/* Subtle Vertical Lines */}
-            <div className="fixed inset-0 pointer-events-none opacity-[0.03]" style={{
-                backgroundImage: `linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)`,
-                backgroundSize: "100px 100px"
-            }} />
-
-            <div className="container mx-auto px-6 lg:px-12 max-w-6xl relative z-10">
-
-                <Link href="/#playground" className="group flex items-center gap-3 text-xs font-mono font-bold tracking-[0.3em] text-gray-500 hover:text-white transition-colors mb-16 max-w-max uppercase">
-                    <div className="p-2 border border-gray-800 rounded group-hover:border-gray-400 transition-colors">
-                        <ArrowLeft className="w-4 h-4" />
-                    </div>
-                    NODE_EXIT / PLAYGROUND
+            <div className="container mx-auto px-6 lg:px-12 max-w-7xl relative z-10">
+                {/* Clean Navigation */}
+                <Link href="/#playground" className="group flex items-center gap-3 text-xs font-bold tracking-widest text-slate-400 hover:text-blue-600 transition-all mb-12 max-w-max uppercase">
+                    <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
+                    BACK TO INFRASTRUCTURE
                 </Link>
 
-                <header className="mb-24 flex flex-col md:flex-row gap-12 items-start md:items-end border-b border-gray-800 pb-16">
-                    <motion.div
+                {/* Hero Section: The Discovery Engine */}
+                <header className="mb-20 text-center max-w-4xl mx-auto">
+                    <motion.div 
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        className="w-32 h-32 rounded-sm bg-black border border-gray-700 flex items-center justify-center shrink-0 relative group"
+                        className="inline-flex items-center gap-2 px-4 py-1.5 bg-blue-50 border border-blue-100 rounded-full text-blue-600 text-[10px] font-black tracking-widest uppercase mb-8"
                     >
-                        <div className="absolute inset-0 border border-white/10 group-hover:border-white/30 transition-colors" />
-                        <Icon className="w-16 h-16 text-white" />
+                        <span className="w-2 h-2 rounded-full bg-blue-600 animate-pulse" />
+                        Creative Infrastructure v1.0
                     </motion.div>
-
-                    <div className="flex-grow">
-                        <motion.div 
-                            initial={{ opacity: 0, x: -20 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ delay: 0.1 }}
-                            className="mb-4 flex items-center gap-4"
-                        >
-                            <span className="px-3 py-1 bg-white text-black text-[10px] font-mono font-black tracking-widest uppercase">
-                                ARCHITECTURE_V1
-                            </span>
-                            <span className="text-gray-500 text-[10px] font-mono tracking-widest uppercase">
-                                SECURE_NODE_PROTOCOL
-                            </span>
-                        </motion.div>
-                        <h1 className="text-6xl md:text-9xl font-black text-white tracking-widest mb-6">
-                            ZERAYNCE.
-                        </h1>
-                        <p className="text-xl md:text-3xl font-light text-gray-400 tracking-tight max-w-2xl border-l border-gray-700 pl-8">
-                            Industrial-grade Creative Infrastructure Ecosystem.
-                        </p>
-                    </div>
+                    <h1 className="text-5xl md:text-7xl font-extrabold text-slate-900 tracking-tight leading-[1.1] mb-8">
+                        Find the perfect <span className="text-blue-600">creative</span> for your next project.
+                    </h1>
+                    <p className="text-lg md:text-xl text-slate-500 font-medium leading-relaxed max-w-2xl mx-auto">
+                        Zeraynce bridges the gap between high-level talent and business-critical operations through a node-based industrial ecosystem.
+                    </p>
                 </header>
 
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-24">
-                    {/* Key Pillars */}
-                    <div className="lg:col-span-8 space-y-12">
-                        <section>
-                            <h2 className="text-xs font-mono font-black text-white tracking-[0.5em] uppercase mb-10 opacity-50">
-                                01 / CORE_IDENTITY
-                            </h2>
-                            <p className="text-3xl md:text-4xl font-light text-white leading-tight mb-12">
-                                Bridging the gap between high-level talent and business-critical operations.
-                            </p>
-                            
+                {/* Main UI Mockup Grid */}
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-32">
+                    
+                    {/* Discovery Engine Layout (Left) */}
+                    <div className="lg:col-span-8 space-y-8">
+                        {/* Featured Talent Card */}
+                        <motion.div 
+                            initial={{ opacity: 0, scale: 0.98 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            viewport={{ once: true }}
+                            className="bg-white border border-slate-200 rounded-[2.5rem] p-8 md:p-12 shadow-sm relative overflow-hidden group"
+                        >
+                            <div className="flex justify-between items-start mb-12">
+                                <div>
+                                    <h2 className="text-2xl font-bold text-slate-900 mb-2">Featured Talent</h2>
+                                    <p className="text-slate-500 text-sm">Industrial-grade discovery via Recent Creatives.</p>
+                                </div>
+                                <div className="p-4 bg-slate-50 border border-slate-100 rounded-2xl">
+                                    <Users className="w-6 h-6 text-slate-400" />
+                                </div>
+                            </div>
+
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 {[
-                                    { title: "THE_MARKETPLACE", desc: "High-fidelity discovery engine via Recent Creatives and Creative Card systems.", icon: Users },
-                                    { title: "FINANCIAL_LAYER", desc: "Built-in transaction system (PayCreativeModal) handling legal and billing actions.", icon: DollarSign },
-                                    { title: "MANAGEMENT_HQ", desc: "Elite dashboard to monitor Nodes, track progress via Analytics, and Aesthetic Calendar.", icon: BarChart3 },
-                                    { title: "AI_COMPANION", desc: "Artificial intelligence optimizing workflow and creative search ergonomics.", icon: BrainCircuit },
-                                ].map((pillar, i) => (
-                                    <motion.div 
-                                        key={pillar.title}
-                                        initial={{ opacity: 0, y: 20 }}
-                                        whileInView={{ opacity: 1, y: 0 }}
-                                        viewport={{ once: true }}
-                                        transition={{ delay: i * 0.1 }}
-                                        className="p-8 border border-gray-900 bg-gray-900/10 hover:border-gray-700 transition-colors group"
-                                    >
-                                        <pillar.icon className="w-6 h-6 text-gray-400 group-hover:text-white mb-6 transition-colors" />
-                                        <h3 className="text-sm font-mono font-black text-white mb-3 tracking-widest">{pillar.title}</h3>
-                                        <p className="text-sm text-gray-500 leading-relaxed font-light">{pillar.desc}</p>
-                                    </motion.div>
+                                    { name: "Sovereign Dev", role: "Systems Architect", rate: "$120/hr", img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop" },
+                                    { name: "Elite Motion", role: "Visual Engineer", rate: "$95/hr", img: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop" },
+                                ].map((creative, i) => (
+                                    <div key={i} className="flex items-center gap-4 p-5 bg-slate-50 rounded-3xl border border-slate-100 hover:border-blue-200 transition-colors">
+                                        <div className="w-14 h-14 rounded-2xl bg-slate-200 shrink-0" />
+                                        <div className="flex-grow">
+                                            <h4 className="font-bold text-slate-900 text-sm">{creative.name}</h4>
+                                            <p className="text-xs text-slate-500">{creative.role}</p>
+                                        </div>
+                                        <div className="text-right">
+                                            <div className="text-xs font-black text-blue-600">{creative.rate}</div>
+                                            <div className="text-[10px] text-slate-400">NODE_VERIFIED</div>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </motion.div>
+
+                        {/* Workflow Manager (Tabs/Calendar) */}
+                        <motion.div 
+                            initial={{ opacity: 0, scale: 0.98 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            viewport={{ once: true }}
+                            className="bg-slate-900 rounded-[2.5rem] p-8 md:p-12 shadow-2xl relative overflow-hidden"
+                        >
+                            <div className="absolute top-0 right-0 w-64 h-64 bg-blue-600/10 blur-[80px] rounded-full" />
+                            <div className="relative z-10">
+                                <h2 className="text-2xl font-bold text-white mb-8 flex items-center gap-4">
+                                    <BarChart3 className="w-6 h-6 text-blue-400" /> Management HQ
+                                </h2>
+                                <div className="flex gap-4 mb-10 overflow-x-auto pb-4 border-b border-white/5">
+                                    {["Pipeline", "Nodes", "Financials", "Creative HQ"].map((tab, i) => (
+                                        <button key={tab} className={`px-6 py-2 rounded-full text-xs font-bold transition-all whitespace-nowrap ${i === 0 ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/20' : 'text-slate-500 hover:text-white'}`}>
+                                            {tab}
+                                        </button>
+                                    ))}
+                                </div>
+                                <div className="space-y-4">
+                                    <div className="flex items-center justify-between p-4 bg-white/5 border border-white/10 rounded-2xl">
+                                        <div className="flex items-center gap-4">
+                                            <div className="w-10 h-10 rounded-xl bg-orange-500/20 flex items-center justify-center">
+                                                <DollarSign className="w-5 h-5 text-orange-400" />
+                                            </div>
+                                            <div>
+                                                <div className="text-sm font-bold text-white">Project Milestone Alpha</div>
+                                                <div className="text-[10px] text-slate-500 font-mono tracking-widest uppercase">Pending_Payout // 4,200 USD</div>
+                                            </div>
+                                        </div>
+                                        <button className="px-5 py-2 bg-white text-black text-[10px] font-black rounded-lg uppercase tracking-widest hover:bg-slate-200 transition-colors">
+                                            Execute
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </motion.div>
+                    </div>
+
+                    {/* Meta Pillars (Right) */}
+                    <div className="lg:col-span-4 space-y-8">
+                        <section className="bg-white border border-slate-200 rounded-[2.5rem] p-8 shadow-sm">
+                            <h3 className="text-xs font-black text-slate-400 tracking-[0.3em] uppercase mb-8">System Pillars</h3>
+                            <div className="space-y-6">
+                                {[
+                                    { title: "Financial Layer", icon: ShieldCheck, color: "text-blue-600", bg: "bg-blue-50" },
+                                    { title: "AI Companion", icon: BrainCircuit, color: "text-emerald-600", bg: "bg-emerald-50" },
+                                    { title: "Sovereign Profile", icon: Globe, color: "text-purple-600", bg: "bg-purple-50" },
+                                ].map((item) => (
+                                    <div key={item.title} className="flex items-center gap-4 group">
+                                        <div className={`p-3 rounded-2xl transition-all group-hover:scale-110 ${item.bg}`}>
+                                            <item.icon className={`w-5 h-5 ${item.color}`} />
+                                        </div>
+                                        <div className="font-bold text-slate-800 tracking-tight">{item.title}</div>
+                                    </div>
                                 ))}
                             </div>
                         </section>
 
-                        <section className="bg-white p-12 md:p-16">
-                            <h2 className="text-xs font-mono font-black text-black tracking-[0.5em] uppercase mb-8">
-                                02 / STEALTH_WEALTH_AESTHETIC
-                            </h2>
-                            <p className="text-2xl text-black font-light leading-relaxed mb-10">
-                                Defined by "Minimalist Authority." Using deep blacks, neutral grays, and high-contrast whites to reflect its status as industry-grade infrastructure.
-                            </p>
-                            <div className="flex gap-4">
-                                <div className="w-12 h-12 bg-black border border-gray-300" />
-                                <div className="w-12 h-12 bg-gray-400" />
-                                <div className="w-12 h-12 bg-gray-200" />
-                                <div className="w-12 h-12 bg-white" />
-                            </div>
-                        </section>
-                    </div>
-
-                    {/* Meta Info */}
-                    <div className="lg:col-span-4 space-y-8">
-                        <div className="border border-gray-800 p-8">
-                            <h3 className="text-xs font-mono font-black text-white tracking-widest uppercase mb-6 border-b border-gray-800 pb-4">
-                                SYSTEM_STATUS
-                            </h3>
-                            <div className="space-y-4">
-                                <div className="flex justify-between items-center text-xs font-mono">
-                                    <span className="text-gray-500">OPERATIONAL_MODE</span>
-                                    <span className="text-white">STEALTH</span>
-                                </div>
-                                <div className="flex justify-between items-center text-xs font-mono">
-                                    <span className="text-gray-500">SECURITY_LEVEL</span>
-                                    <span className="text-white">NODE_PROTOCOL_5</span>
-                                </div>
-                                <div className="flex justify-between items-center text-xs font-mono">
-                                    <span className="text-gray-500">UPTIME</span>
-                                    <span className="text-white">99.99%</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="bg-gray-950 border border-gray-800 p-8 font-mono text-[10px] space-y-4 text-gray-400 leading-relaxed">
-                            <div className="flex items-center gap-2 text-white border-b border-gray-800 pb-4 mb-4">
-                                <TerminalSquare className="w-4 h-4 text-white" />
-                                <span>INFRASTRUCTURE_INIT.SH</span>
-                            </div>
-                            <p>&gt; initializing zeraynce core...</p>
-                            <p>&gt; connecting to creative nodes...</p>
-                            <p>&gt; establishing financial layer...</p>
-                            <p>&gt; secure_protocol: ACTIVE</p>
-                            <p>&gt; aesthetic_logic: MINIMALIST_AUTHORITY</p>
-                        </div>
-                        
-                        <div className="p-8 border-l-4 border-white bg-gray-900/20">
-                            <p className="text-sm italic text-gray-400 font-light leading-relaxed">
+                        <section className="bg-blue-600 rounded-[2.5rem] p-8 text-white shadow-xl shadow-blue-600/20">
+                            <p className="text-sm font-medium leading-relaxed mb-8">
                                 "Zeraynce is the operating system for the modern creative economy—combining hiring, project management, and financial automation into a single, high-performance node."
                             </p>
+                            <div className="flex items-center gap-4">
+                                <div className="w-10 h-10 rounded-full bg-white/20" />
+                                <div>
+                                    <div className="text-xs font-black uppercase tracking-widest">Platform Core</div>
+                                    <div className="text-[10px] opacity-70">Infrastructure v1</div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <div className="p-8 bg-slate-100 rounded-[2.5rem] border border-slate-200 border-dashed">
+                            <div className="flex items-center gap-2 text-slate-600 mb-4">
+                                <TerminalSquare className="w-4 h-4" />
+                                <span className="text-[10px] font-mono font-bold tracking-widest uppercase">NODE_STATUS</span>
+                            </div>
+                            <div className="space-y-2 font-mono text-[9px] text-slate-400">
+                                <p>&gt; initializing creative_search...</p>
+                                <p>&gt; creative_marketplace: [ONLINE]</p>
+                                <p>&gt; node_stability: 99.99%</p>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <div className="flex justify-center border-t border-gray-800 pt-16">
-                    <a href={project.liveUrl} className="px-12 py-5 bg-white text-black font-black text-sm tracking-[0.3em] hover:bg-gray-200 transition-colors uppercase shadow-[0_0_50px_rgba(255,255,255,0.1)]">
-                        ACCESS_NODE
+                <div className="flex flex-col items-center gap-8 border-t border-slate-200 pt-20">
+                    <h2 className="text-3xl font-extrabold text-slate-900">Ready to enter the ecosystem?</h2>
+                    <a 
+                        href="https://zeraynce.com/" 
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="px-16 py-6 bg-blue-600 text-white font-black text-sm tracking-[0.2em] rounded-full hover:bg-blue-700 hover:scale-105 transition-all uppercase shadow-[0_20px_40px_rgba(59,130,246,0.3)]"
+                    >
+                        Access Infrastructure Node
                     </a>
                 </div>
             </div>

@@ -2,6 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import { Github, Server, Lock, BrainCircuit } from "lucide-react";
 
 export default function Blueprint() {
     return (
@@ -52,115 +53,119 @@ export default function Blueprint() {
                         </motion.div>
                     </div>
 
-                    {/* Ecosystem Map with Framer Motion SVG and Glassmorphism */}
+                    {/* Ecosystem Map with Enhanced Fluid Connections */}
                     <motion.div
-                        initial={{ opacity: 0, scale: 0.95 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="relative bg-[#050505] border border-gray-800 rounded-2xl p-8 flex flex-col items-center justify-center space-y-6 min-h-[500px] md:min-h-[600px] overflow-hidden group shadow-[0_0_40px_rgba(0,0,0,0.5)]"
+                        className="relative bg-[#02040a] border border-blue-900/30 rounded-3xl p-8 flex flex-col items-center justify-center min-h-[550px] md:min-h-[650px] overflow-hidden group shadow-[0_0_100px_rgba(30,58,138,0.2)]"
                     >
-                        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(59,130,246,0.15),transparent)] pointer-events-none transition-all group-hover:scale-110" />
+                        {/* Blueprint Grid Background */}
+                        <div className="absolute inset-0 opacity-[0.05] pointer-events-none" style={{
+                            backgroundImage: `linear-gradient(#3b82f6 1px, transparent 1px), linear-gradient(90deg, #3b82f6 1px, transparent 1px)`,
+                            backgroundSize: '40px 40px'
+                        }} />
+                        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.1),transparent_70%)] pointer-events-none" />
 
-                        <h4 className="text-blue-300 font-mono text-sm tracking-widest text-center">THE ECOSYSTEM</h4>
+                        <div className="relative z-10 w-full h-full flex flex-col items-center">
+                            <h4 className="text-blue-400 font-mono text-[10px] font-black tracking-[0.5em] text-center mb-12 uppercase">
+                                SYSTEM_ORCHESTRATION_CORE
+                            </h4>
 
-                        <div className="w-full h-full relative z-10 flex flex-col justify-between items-center top-6">
+                            <div className="relative w-full flex flex-col items-center gap-16">
+                                {/* Top: Source Entry */}
+                                <EcosystemNode 
+                                    label="GitHub Actions (Source/CI)" 
+                                    icon={<Github className="w-5 h-5 text-white" />}
+                                    color="border-white/40 bg-white/10"
+                                    textColor="text-white"
+                                />
 
-                            {/* Animated SVG Connections overlay */}
-                            <div className="absolute inset-0 z-0 pointer-events-none w-full h-full">
-                                <svg className="w-full h-full" viewBox="0 0 400 500" preserveAspectRatio="none">
-                                    {/* Source to Edge line */}
-                                    <motion.path
-                                        initial={{ pathLength: 0 }}
-                                        whileInView={{ pathLength: 1 }}
-                                        transition={{ duration: 1.5, ease: "easeInOut" }}
-                                        d="M 200 40 L 200 160"
-                                        fill="none"
-                                        stroke="rgba(255,255,255,0.2)"
-                                        strokeWidth="2"
+                                {/* Middle Section: Distributed Intelligence */}
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-lg">
+                                    <EcosystemNode 
+                                        label="Cloudflare (Edge Context)" 
+                                        icon={<Lock className="w-5 h-5 text-orange-400" />}
+                                        color="border-orange-500/40 bg-orange-950/20"
+                                        textColor="text-orange-400"
                                     />
-                                    {/* Glowing Pulse on path */}
-                                    <motion.circle
-                                        animate={{ y: [40, 160], opacity: [0, 1, 0] }}
-                                        transition={{ repeat: Infinity, duration: 2, ease: "linear" }}
-                                        cx="200" cy="0" r="4" fill="currentColor"
-                                        className="text-gray-400 shadow-[0_0_10px_gray]"
+                                    <EcosystemNode 
+                                        label="AWS / DigitalOcean" 
+                                        icon={<Server className="w-5 h-5 text-blue-400" />}
+                                        color="border-blue-500/40 bg-blue-950/20"
+                                        textColor="text-blue-400"
                                     />
+                                </div>
 
-                                    {/* Edge to Compute (Branching) */}
-                                    <motion.path
-                                        initial={{ pathLength: 0 }}
-                                        whileInView={{ pathLength: 1 }}
-                                        transition={{ duration: 1.5, ease: "easeInOut", delay: 0.5 }}
-                                        d="M 200 220 L 200 240 Q 200 260 120 260 L 120 280"
-                                        fill="none" stroke="rgba(59,130,246,0.4)" strokeWidth="2"
+                                {/* Bottom: The Brain */}
+                                <motion.div
+                                    animate={{ scale: [1, 1.05, 1], boxShadow: ["0 0 20px rgba(16,185,129,0.2)", "0 0 40px rgba(16,185,129,0.4)", "0 0 20px rgba(16,185,129,0.2)"] }}
+                                    transition={{ repeat: Infinity, duration: 4 }}
+                                    className="p-1 px-1 rounded-2xl bg-gradient-to-br from-emerald-500/50 to-blue-500/50"
+                                >
+                                    <EcosystemNode 
+                                        label="LLM APIs (Cognitive Core)" 
+                                        icon={<BrainCircuit className="w-6 h-6 text-emerald-400" />}
+                                        color="border-emerald-500/40 bg-[#02040a] rounded-xl"
+                                        textColor="text-emerald-400"
+                                        active
                                     />
-                                    <motion.path
-                                        initial={{ pathLength: 0 }}
-                                        whileInView={{ pathLength: 1 }}
-                                        transition={{ duration: 1.5, ease: "easeInOut", delay: 0.5 }}
-                                        d="M 200 220 L 200 240 Q 200 260 280 260 L 280 280"
-                                        fill="none" stroke="rgba(234,179,8,0.4)" strokeWidth="2"
-                                    />
+                                </motion.div>
 
-                                    {/* Compute to AI */}
-                                    <motion.path
-                                        initial={{ pathLength: 0 }}
-                                        whileInView={{ pathLength: 1 }}
-                                        transition={{ duration: 1.5, ease: "easeInOut", delay: 1 }}
-                                        d="M 120 340 L 120 360 Q 120 380 200 380 L 200 400"
-                                        fill="none" stroke="rgba(16,185,129,0.4)" strokeWidth="2"
+                                {/* SVG Connections (Refactored for reliability) */}
+                                <svg className="absolute inset-0 w-full h-full pointer-events-none -z-10 overflow-visible" viewBox="0 0 400 500">
+                                    {/* Central Vertical Trunk */}
+                                    <motion.line 
+                                        initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }} transition={{ duration: 1 }}
+                                        x1="200" y1="40" x2="200" y2="440" stroke="rgba(59,130,246,0.1)" strokeWidth="1" strokeDasharray="4 4" 
                                     />
-                                    <motion.path
-                                        initial={{ pathLength: 0 }}
-                                        whileInView={{ pathLength: 1 }}
-                                        transition={{ duration: 1.5, ease: "easeInOut", delay: 1 }}
-                                        d="M 280 340 L 280 360 Q 280 380 200 380 L 200 400"
-                                        fill="none" stroke="rgba(16,185,129,0.4)" strokeWidth="2"
-                                    />
-
-                                    {/* Pulses */}
-                                    <motion.circle animate={{ pathOffset: [0, 1] }} cx="200" cy="0" r="3" fill="#3b82f6" style={{ offsetPath: "path('M 200 220 L 200 240 Q 200 260 120 260 L 120 280')" }} transition={{ repeat: Infinity, duration: 2, ease: "linear", delay: 0.5 }} />
-                                    <motion.circle animate={{ pathOffset: [0, 1] }} cx="200" cy="0" r="3" fill="#eab308" style={{ offsetPath: "path('M 200 220 L 200 240 Q 200 260 280 260 L 280 280')" }} transition={{ repeat: Infinity, duration: 2, ease: "linear", delay: 0.8 }} />
+                                    
+                                    {/* Data Stream Pulses */}
+                                    {[0, 1.5, 3].map((delay) => (
+                                        <motion.circle 
+                                            key={delay}
+                                            animate={{ cy: [40, 440], opacity: [0, 1, 0] }}
+                                            transition={{ repeat: Infinity, duration: 3, ease: "linear", delay }}
+                                            cx="200" cy="40" r="3" fill="#3b82f6"
+                                        />
+                                    ))}
                                 </svg>
                             </div>
 
-                            {/* Nodes overlaying the SVG */}
-                            <div className="z-10 w-full flex justify-center mt-0 absolute top-0">
-                                <div className="text-center w-64 bg-[#1a1c23]/90 backdrop-blur-md border border-gray-600 rounded-lg py-3 shadow-lg border-t-white border-t-2">
-                                    <span className="font-bold text-white text-sm">GitHub Actions (Source/CI)</span>
-                                </div>
+                            <div className="mt-16 text-[9px] font-mono text-blue-700/50 uppercase tracking-widest text-center">
+                                HEURISTIC_MAPPING_ACTIVE // 99.9% SYNC_UPTIME
                             </div>
-
-                            <div className="z-10 w-full flex justify-center absolute top-[160px]">
-                                <div className="text-center w-64 bg-orange-950/80 backdrop-blur-md border border-orange-500/50 rounded-lg py-3 shadow-lg border-t-orange-500 border-t-2">
-                                    <span className="font-bold text-orange-400 text-sm">Cloudflare (Edge/Security)</span>
-                                </div>
-                            </div>
-
-                            <div className="z-10 w-full flex justify-around px-4 absolute top-[280px]">
-                                <div className="text-center w-40 bg-blue-950/80 backdrop-blur-md border border-blue-500/50 rounded-lg py-3 shadow-lg border-t-blue-500 border-t-2">
-                                    <span className="font-bold text-blue-400 text-sm">DigitalOcean VMs</span>
-                                </div>
-                                <div className="text-center w-40 bg-yellow-950/80 backdrop-blur-md border border-yellow-500/50 rounded-lg py-3 shadow-lg border-t-yellow-500 border-t-2">
-                                    <span className="font-bold text-yellow-400 text-sm">AWS DB/Queue</span>
-                                </div>
-                            </div>
-
-                            <div className="z-10 w-full flex justify-center absolute top-[400px]">
-                                <div className="text-center w-64 bg-emerald-950/80 backdrop-blur-md border border-emerald-500/50 rounded-lg py-3 shadow-lg border-t-emerald-500 border-t-2 relative">
-                                    <span className="absolute -left-3 -top-3 flex h-6 w-6">
-                                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                                        <span className="relative inline-flex rounded-full h-6 w-6 bg-emerald-500 border-2 border-black"></span>
-                                    </span>
-                                    <span className="font-bold text-emerald-400 text-sm">LLM APIs (Cognitive Core)</span>
-                                </div>
-                            </div>
-
                         </div>
-
                     </motion.div>
                 </div>
             </div>
         </section>
+    );
+}
+
+function EcosystemNode({ label, icon, color, textColor, active = false }: any) {
+    return (
+        <motion.div
+            whileHover={{ scale: 1.02, y: -2 }}
+            className={`w-full max-w-[280px] p-4 rounded-xl border backdrop-blur-md shadow-2xl relative group ${color}`}
+        >
+            <div className="flex items-center gap-4">
+                <div className="p-2.5 rounded-lg bg-black/40 border border-white/5 group-hover:border-white/20 transition-colors">
+                    {icon}
+                </div>
+                <div className="flex flex-col">
+                    <span className={`text-[11px] font-black font-mono tracking-widest uppercase mb-1 ${textColor}`}>
+                        {label}
+                    </span>
+                    <div className="flex items-center gap-1.5 font-mono text-[8px] opacity-40">
+                        <span className={`w-1 h-1 rounded-full ${active ? 'bg-emerald-400 animate-pulse' : 'bg-blue-400'}`} />
+                        CONNECTED_PORT_80
+                    </div>
+                </div>
+            </div>
+            {/* Corner Accents */}
+            <div className={`absolute -top-1 -left-1 w-2 h-2 border-t-2 border-l-2 opacity-0 group-hover:opacity-100 transition-opacity ${color.split(' ')[0]}`} />
+            <div className={`absolute -bottom-1 -right-1 w-2 h-2 border-b-2 border-r-2 opacity-0 group-hover:opacity-100 transition-opacity ${color.split(' ')[0]}`} />
+        </motion.div>
     );
 }
