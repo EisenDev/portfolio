@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "next/navigation";
 import Link from "next/link";
-import { ArrowLeft, ExternalLink, ShieldCheck, Eye, TerminalSquare, Activity, Focus, Terminal, Server, Network, Code, ScanFace, Target, Zap, Wind, Laptop, Cloud, Github, Lock, BrainCircuit, BarChart3, Users, BadgeCheck, DollarSign, Globe } from "lucide-react";
+import { ArrowLeft, ExternalLink, ShieldCheck, Eye, TerminalSquare, Activity, Focus, Terminal, Server, Network, Code, ScanFace, Target, Zap, Wind, Laptop, Cloud, Github, Lock, BrainCircuit, BarChart3, Users, BadgeCheck, DollarSign, Globe, Database } from "lucide-react";
 import { motion } from "framer-motion";
 
 const PROJECT_DATA: Record<string, any> = {
