@@ -10,7 +10,7 @@ export default function TechStack() {
         { category: "Databases", icon: Database, items: ["Supabase", "PostgreSQL", "MySQL", "Server Database"] },
         { category: "Cloud & AI", icon: Cloud, items: ["AWS CDK (IaC)", "Azure", "Digital Ocean", "OpenAI / Gemini APIs"] },
         { category: "Design Tools", icon: PenTool, items: ["Figma", "Canva", "UI/UX Prototyping", "Interactive Design"] },
-        { category: "Practices", icon: Terminal, items: ["Prompt-Driven Development", "Vibe Coding", "System Architecture", "Zero-Day Vuln Scanning"] }
+        { category: "Practices", icon: Terminal, items: ["Prompt-Driven Development", "Agentic Orchestration", "System Architecture", "Zero-Day Vuln Scanning"] }
     ];
 
     return (

@@ -48,7 +48,7 @@ export default function Flagship() {
                         </div>
                     </motion.div>
 
-                    {/* Right: Architecture & Vibe */}
+                    {/* Right: Architecture & Aesthetics */}
                     <div className="flex flex-col items-center justify-center relative w-full h-[60vh] lg:h-auto border border-[var(--color-border-subtle)] rounded-2xl bg-black/50 p-6 overflow-hidden shadow-2xl">
 
                         {/* Animated Network Diagram */}
@@ -93,7 +93,7 @@ export default function Flagship() {
                             </g>
                         </svg>
 
-                        {/* Terminal Overlay (The "Sync" Vibe) */}
+                        {/* Terminal Overlay (The "Sync" Pulse) */}
                         <motion.div
                             initial={{ opacity: 0, scale: 0.9, y: 50 }}
                             whileInView={{ opacity: 1, scale: 1, y: 0 }}

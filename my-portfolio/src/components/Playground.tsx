@@ -8,6 +8,13 @@ import { GitHubZenUtility, IPGeolocationUtility, HardwareGeolocationUtility, Spa
 
 const PROJECTS = [
     {
+        id: "sqauto",
+        title: "SQAUTO",
+        desc: "Industrial-grade SQL Dump Data Migration Platform with AI-assisted schema profiling.",
+        tech: ["Next.js", "Python", "FastAPI", "PostgreSQL", "Polars", "Gemini AI"],
+        href: "/project/sqauto"
+    },
+    {
         id: "iris-ts",
         title: "IRIS-TS",
         desc: "Intelligent Rapid Interface Synthesizer - Atmosphere Engine.",

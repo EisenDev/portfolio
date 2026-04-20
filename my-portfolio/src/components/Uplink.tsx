@@ -25,7 +25,7 @@ export default function Uplink() {
             "> TRANSMITTING ENCRYPTED LOGS...",
         ];
 
-        // Vibe animation typing effect
+        // Pulse animation typing effect
         sequence.forEach((log, index) => {
             setTimeout(() => {
                 setLogs(prev => [...prev, log]);
@@ -108,7 +108,7 @@ export default function Uplink() {
                     viewport={{ once: true }}
                     className="bg-[var(--color-bg-secondary)] border border-[var(--color-border-subtle)] rounded-2xl p-8 shadow-2xl relative overflow-hidden"
                 >
-                    {/* Vibe Terminal Logging Overlay */}
+                    {/* Terminal Logging Pulse Overlay */}
                     {logs.length > 0 && !success && (
                         <div className="absolute inset-0 z-20 bg-[var(--color-bg-primary)]/95 backdrop-blur-md p-8 flex flex-col font-mono text-sm text-[var(--color-brand-500)]">
                             <div className="flex items-center gap-3 mb-6 border-b border-green-900/50 pb-4">

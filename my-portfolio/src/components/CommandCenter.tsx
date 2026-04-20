@@ -7,7 +7,7 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { Sphere, MeshDistortMaterial } from "@react-three/drei";
 import { motion } from "framer-motion";
 
-function VibeNode() {
+function PulseNode() {
     const meshRef = useRef<any>(null);
     useFrame((state) => {
         if (meshRef.current) {
@@ -71,7 +71,7 @@ export default function CommandCenter() {
                     </div>
 
                     <p className="text-xl md:text-2xl font-light text-[var(--color-text-secondary)] leading-relaxed max-w-2xl">
-                        Specializing in Prompt Engineering, Vibe Coding, and System Architecture using TypeScript. Expertise in integrating APIs with Cloudflare, Azure, Digital Ocean, and AWS.
+                        Specializing in Prompt Engineering, Agentic Development, and System Architecture using TypeScript. Expertise in integrating APIs with Cloudflare, Azure, Digital Ocean, and AWS.
                     </p>
 
                     <div className="flex flex-wrap gap-4 pt-4">
@@ -86,12 +86,12 @@ export default function CommandCenter() {
 
                 {/* Visuals */}
                 <div className="relative flex items-center justify-center order-1 lg:order-2 h-[40vh] lg:h-auto min-h-[400px]">
-                    {/* 3D Vibe Element Background */}
+                    {/* 3D Pulse Element Background */}
                     <div className="absolute inset-0 w-full h-full opacity-60">
                         <Canvas camera={{ position: [0, 0, 5] }}>
                             <ambientLight intensity={0.5} />
                             <directionalLight position={[10, 10, 5]} intensity={1} />
-                            <VibeNode />
+                            <PulseNode />
                         </Canvas>
                     </div>
 

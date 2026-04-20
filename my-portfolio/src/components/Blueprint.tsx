@@ -21,7 +21,7 @@ export default function Blueprint() {
                 </div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                    {/* Vibe Coding & TS Focus */}
+                    {/* Agentic Development & TS Focus */}
                     <div className="space-y-12">
                         <motion.div
                             initial={{ opacity: 0, x: -30 }}
@@ -45,7 +45,7 @@ export default function Blueprint() {
                         >
                             <div className="absolute -right-10 -top-10 w-32 h-32 bg-[var(--color-brand-500)]/20 blur-[50px] rounded-full" />
                             <h4 className="text-2xl font-bold text-[var(--color-text-primary)] mb-4 flex items-center gap-3">
-                                <span className="text-[var(--color-brand-500)]">✦</span> Vibe Coding Methodology
+                                <span className="text-[var(--color-brand-500)]">✦</span> Agentic Development Methodology
                             </h4>
                             <p className="text-sm text-[var(--color-text-secondary)] leading-relaxed italic border-l-2 border-[var(--color-brand-500)] pl-4">
                                 "I use Prompt-Driven Development (AI Agents like GitHub Copilot/Cursor) to bulldoze through boilerplate and trivial UI scaffolding. This accelerates dev cycles by 3x, allowing me to shift 100% of my cognitive load onto complex System Design, Data Heuristics, and Business Scaling."

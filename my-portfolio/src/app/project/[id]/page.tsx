@@ -103,6 +103,26 @@ const PROJECT_DATA: Record<string, any> = {
             "[info] Routing findings to Intelligence Liaison (Gemini)...",
             "[ ok ] Remediation Cost Matrix Generated. 1,933 Pending."
         ]
+    },
+    "sqauto": {
+        id: "sqauto",
+        title: "SQAUTO",
+        liveUrl: "http://sqauto.zeraynce.com/",
+        icon: Database,
+        themeColor: "#3b82f6",
+        themeGlow: "rgba(59,130,246,0.3)",
+        tags: ["SQL Migration", "AI Profiling", "Data Normalization", "Staging Ops"],
+        overview: "INDUSTRIAL-GRADE SQL MIGRATION. SQAUTO is a specialized platform designed to handle massive SQL dumps, providing real-time analysis, automated cleaning, and safe migration into modern architectures.",
+        challenge: "Legacy databases often contain fragmented relations, inconsistent formatting, and are too large (5GB+) for standard manual auditing tools, leading to high failure rates during migration.",
+        solution: "A service-oriented migration pipeline utilizing Python (Polars) for heavy lifting and Gemini AI for intelligent schema profiling. It ensures a read-only source of truth while performing all transformations in an isolated, auditable staging environment.",
+        logs: [
+            "~ $ sqauto restore --file master_v4_2026.sql",
+            "[info] Restoring SQL dump to staging (5.4GB)...",
+            "[info] Initializing Schema Profiler (Gemini 2.5)...",
+            "[warn] 42 orphaned foreign key relations detected.",
+            "[info] Running deterministic cleaning on 'users' table...",
+            "[ ok ] Migration Pipeline Ready. Exporting to Clean SQL."
+        ]
     }
 };
 
